@@ -10,3 +10,4 @@
 *.lot
 *.out
 **/wesley
+*.DS_Store
