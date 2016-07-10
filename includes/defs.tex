@@ -1,0 +1,175 @@
+% defs.tex -- wbepi environment for chapter epigraphs and other useful defs.
+%
+% Wisconsin dissertation template
+% Copyright (c) 2008 William C. Benton.  All rights reserved.
+%
+% This program can redistributed and/or modified under the terms
+% of the LaTeX Project Public License Distributed from CTAN
+% archives in directory macros/latex/base/lppl.txt; either
+% version 1 of the License, or (at your option) any later version.
+%
+% This program includes other software that is licensed under the
+% terms of the LPPL and the Perl Artistic License; see README for details.
+%
+% You, the user, still hold the copyright to any document you produce
+% with this software (like your dissertation).
+
+
+%% put lstnewenvironment declarations here, if you're using listings
+
+%% end lstnewenvironment declarations
+
+%% I put convenience definitions that will go in several chapters here
+
+%%%%% begin convenience definitions
+\usepackage{multirow} % multirow in tables
+\usepackage{rotating} % rotatebox in tables
+\usepackage{commath} % abs
+\usepackage{xfrac} % sfrac
+
+\usepackage{xspace} % space in command definitions
+
+% for mathscr
+\usepackage{mathrsfs}
+%\usepackage{unicode-math}
+%\setmathfont{XITS Math}
+%\setmathfont[version=setB,StylisticSet=1]{XITS Math}
+
+% center table not caption
+\usepackage[justification=justified,margin=15pt,labelfont=bf,font=sl,format=hang,indention=-0.5cm]{caption}
+
+
+
+% units
+\newcommand{\keV}{\ensuremath{\mathrm{keV}}\xspace}
+\newcommand{\MeV}{\ensuremath{\mathrm{MeV}}\xspace}
+\newcommand{\GeV}{\ensuremath{\mathrm{GeV}}\xspace}
+\newcommand{\TeV}{\ensuremath{\mathrm{TeV}}\xspace}
+\newcommand{\fbinv}{\ensuremath{\mathrm{fb}^{-1}}\xspace}
+\newcommand{\fb}{\ensuremath{\mathrm{fb}}\xspace}
+\newcommand{\ns}{\ensuremath{\mathrm{ns}}\xspace}
+\newcommand{\lumi}{\ensuremath{\mathcal L}\xspace}
+\newcommand{\tlumi}{\ensuremath{\int\mathcal{L} dt}\xspace}
+\newcommand{\dldt}{\ensuremath{d\mathcal L/dt}\xspace}
+
+\newcommand{\pbw}{\ensuremath{\mathrm{PbWO}_4}\xspace}
+
+% kinematics
+\newcommand{\pt}{\ensuremath{p_T}\xspace}
+\newcommand{\mt}{\ensuremath{m_T}\xspace}
+\newcommand{\et}{\ensuremath{E_T}\xspace}
+\newcommand{\etg}{\ensuremath{E_T^\gamma}\xspace}
+\newcommand{\ptg}{\ensuremath{p_T^\gamma}\xspace}
+\newcommand{\vmet}{\ensuremath{E_T^{\mathrm{miss}}}\xspace}
+\newcommand{\met}{\ensuremath{E_T^{\mathrm{miss}}}\xspace}
+\newcommand{\s}{\ensuremath{\sqrt{s}=}\xspace}
+
+% generators
+%\newcommand{\MCFM}{{\tt MCFM}\xspace}
+%\newcommand{\GEANT}{{\tt GEANT}\xspace}
+%\newcommand{\FEWZ}{{\tt FEWZ}\xspace}
+%\newcommand{\CTEQ}{{\tt CTEQ}\xspace}
+%\newcommand{\MSTW}{{\tt MSTW}\xspace}
+%\newcommand{\NNPDF}{{\tt NNPDF}\xspace}
+%\newcommand{\HERA}{{\tt HERA}\xspace}
+%\newcommand{\QUETP}{{\tt QUETP}\xspace}
+%\newcommand{\MADGRAPH}{{\tt MADGRAPH}\xspace}
+%\newcommand{\PYTHIA}{{\tt PYTHIA}\xspace}
+%\newcommand{\PYTHIAs}{{\tt PYTHIA6}\xspace}
+%\newcommand{\PYTHIAe}{{\tt PYTHIA8}\xspace}
+
+\newcommand{\MCFM}{{MCFM}\xspace}
+\newcommand{\GEANT}{{GEANT}\xspace}
+\newcommand{\FEWZ}{{FEWZ}\xspace}
+\newcommand{\CTEQ}{{CTEQ}\xspace}
+\newcommand{\MSTW}{{MSTW}\xspace}
+\newcommand{\NNPDF}{{NNPDF}\xspace}
+\newcommand{\HERA}{{HERA}\xspace}
+\newcommand{\QUETP}{{QUETP}\xspace}
+\newcommand{\MADGRAPH}{{MADGRAPH}\xspace}
+\newcommand{\PYTHIA}{{PYTHIA}\xspace}
+\newcommand{\PYTHIAs}{{PYTHIA6}\xspace}
+\newcommand{\PYTHIAe}{{PYTHIA8}\xspace}
+%\newcommand{\abs}{\ensuremath{absFIXME}\xspace}
+
+% wbb
+\newcommand{\wbb}{\ensuremath{\w b\bar{b}}\xspace}
+\newcommand{\bbbar}{\ensuremath{b\bar{b}}\xspace}
+\newcommand{\ppwbblnbb}{\ensuremath{pp\rightarrow Wb\bar{b}\rightarrow\ell\nu b\bar{b}}\xspace}
+\newcommand{\ppwbb}{\ensuremath{pp\rightarrow Wb\bar{b}}\xspace}
+\newcommand{\w}{\ensuremath{\mathrm{W}}\xspace}
+%\newcommand{\v}{\ensuremath{\mathrm{V}}\xspace}
+\newcommand{\z}{\ensuremath{\mathrm{Z}}\xspace}
+
+% samples
+\newcommand{\vjets}{\ensuremath{\mathrm{V}+\mathrm{jets}}\xspace}
+\newcommand{\wjets}{\ensuremath{\w+\mathrm{jets}}\xspace}
+\newcommand{\wcc}{\ensuremath{\w c\bar{c}}\xspace}
+\newcommand{\wc}{\ensuremath{\w c}\xspace}
+\newcommand{\wudscg}{\ensuremath{\w usdcg}\xspace}
+\newcommand{\gjets}{\ensuremath{\gamma+\mathrm{jets}}\xspace}
+\newcommand{\zll}{\ensuremath{Z\ell\bar{\ell}}\xspace}
+\newcommand{\zjj}{\ensuremath{\z jj}\xspace}
+\newcommand{\zbb}{\ensuremath{\z \bbbar}\xspace}
+\newcommand{\WW}{\ensuremath{\w\w}\xspace}
+\newcommand{\WZ}{\ensuremath{\w\z}\xspace}
+\newcommand{\ZZ}{\ensuremath{\z\z}\xspace}
+\newcommand{\ttbar}{\ensuremath{t\bar{t}}\xspace}
+
+
+
+% monophoton
+\newcommand{\gmet}{\ensuremath{\gamma+\met}\xspace}
+\newcommand{\zee}{\ensuremath{\z\rightarrow e\bar{e}}\xspace}
+\newcommand{\ttg}{\ensuremath{t\bar{t}\gamma}\xspace}
+\newcommand{\wen}{\ensuremath{\w\rightarrow e\nu}\xspace}
+\newcommand{\wmn}{\ensuremath{\w\rightarrow \mu\nu}\xspace}
+\newcommand{\ppzgnng}{\ensuremath{pp\rightarrow \z\gamma\rightarrow\nu\bar{\nu}\gamma}\xspace}
+\newcommand{\ppzg}{\ensuremath{pp\rightarrow \z\gamma}\xspace}
+\newcommand{\zgnng}{\ensuremath{\z\gamma\rightarrow\nu\bar{\nu}\gamma}\xspace}
+\newcommand{\zgllg}{\ensuremath{\z\gamma\rightarrow\ell\bar{\ell}\gamma}\xspace}
+\newcommand{\zllg}{\ensuremath{\z\rightarrow\ell\bar{\ell}\gamma}\xspace}
+\newcommand{\znn}{\ensuremath{\z\rightarrow\nu\bar{\nu}}\xspace}
+\newcommand{\vg}{\ensuremath{V\gamma}\xspace}
+\newcommand{\zg}{\ensuremath{\z\gamma}\xspace}
+\newcommand{\wg}{\ensuremath{\w\gamma}\xspace}
+\newcommand{\sieie}{\ensuremath{\sigma_{i\eta i\eta}}\xspace}
+\newcommand{\sieip}{\ensuremath{\sigma_{i\eta i\phi}}\xspace}
+\newcommand{\sipip}{\ensuremath{\sigma_{i\phi i\phi}}\xspace}
+\newcommand{\DphiMETg}{\ensuremath{\Delta \phi(\met, \gamma)}\xspace}
+\newcommand{\DphiMETj}{\ensuremath{\Delta \phi(\vmet, j)}\xspace}
+\newcommand{\minDphiMETj}{\ensuremath{\mathrm{min}\DphiMETj}\xspace}
+
+
+
+\newcommand{\wglng}{\ensuremath{\w\gamma\rightarrow \ell\nu\gamma}\xspace}
+\newcommand{\wlng}{\ensuremath{\w\rightarrow \ell\nu\gamma}\xspace}
+\newcommand{\sigetaeta}{\ensuremath{\sigma_{\eta\eta}}\xspace}
+\newcommand{\as}{\ensuremath{\alpha_s}\xspace}
+\newcommand{\MGfiveAMC} {\textsc{MadGraph5\_aMC@NLO}\xspace}
+\newcommand{\NNPDFthree}{\textsc{NNPDF3.0}\xspace}
+\newcommand{\DYRes}{\textsc{DYRes}\xspace}
+
+
+\makeatletter
+\newcommand{\wb@episource}{}
+\newenvironment{wbepi}[1]{\begin{quote}\renewcommand{\wb@episource}{#1}\itshape}{\par\upshape \raggedleft --- \textsc{\wb@episource}\\ \end{quote}}
+\makeatother
+
+%%%%% SVN
+\IfFileExists{svn-multi.sty}{%
+\usepackage{svn-multi}%
+%%% Uncomment the second one and comment out the first one if you want
+%%% to include subversion revision information in each file.
+\newcommand{\vcinfo}{}%
+%\newcommand{\vcinfo}{\begin{centering}\fbox{\fbox{\parbox{5in}{Author: \svnauthor\\Revision: \svnfilerev\\Last changed on: \svnfiledate\\URL: \svnkw{HeadURL}}}}\\[1em]\end{centering}}%
+}{%
+\newcommand{\svnidlong}[4]{}%
+\newcommand{\svnfilerev}{}%
+\newcommand{\svnauthor}{}%
+\newcommand{\svnfiledate}{}%
+\newcommand{\svnkw}{}%
+\newcommand{\vcinfo}{}%
+}
+
+%%%%% end convenience definitions
