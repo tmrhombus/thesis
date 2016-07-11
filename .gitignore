@@ -11,3 +11,6 @@
 *.out
 **/wesley
 *.DS_Store
+*.1
+*.mp
+*.t1

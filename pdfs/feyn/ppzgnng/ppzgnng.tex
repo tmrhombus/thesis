@@ -1,0 +1,24 @@
+\documentclass{standalone}
+\usepackage{feynmp}
+
+% Needed to interpret generated *.1, *.2 etc. as ps files.
+\DeclareGraphicsRule{*}{mps}{*}{} 
+\unitlength=0.9mm
+
+\begin{document}
+\begin{fmffile}{ppzgnngGraph} % this is the name for mpost
+\fmfframe(10,10)(10,10){ % sizes of offset
+%\fmfframe(10,13)(10,9){ % sizes of offset
+%\begin{fmfgraph*}(40,10)
+\begin{fmfgraph*}(40,20)
+  \fmfleft{i1,i2} \fmflabel{$\overline{q}$}{i1} \fmflabel{$q$}{i2}
+  \fmfright{o1,o2,o3} \fmflabel{$\nu$}{o2} \fmflabel{$\nu$}{o3} % \fmflabel{$\gamma$}{o1}
+  \fmf{fermion}{i1,v1,v2,i2}
+  \fmf{zigzag,label=$Z$}{v2,vv2}
+  \fmf{fermion}{o2,vv2,o3}
+%\fmffreeze
+  \fmf{zigzag,label=$\gamma$}{o1,v1}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}
