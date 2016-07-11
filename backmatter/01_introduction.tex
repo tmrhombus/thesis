@@ -504,7 +504,7 @@ On the bottom are the vectors of
   or neutral {$(\nu_e,\nu_\mu,\nu_\tau)=$ (electron-, mu-, tau-neutrino)},
   and all charged fermions are arranged such that mass
   increases with successive generations within a given type. 
- In units where $c=1$, the top ($m_t=173 \;\GeV$)
+ In units where $\hbar=c=1$, the top ($m_t=173 \;\GeV$)
   and bottom ($m_b=4 \;\GeV$) are the heaviest quarks
   of their respective types, with the bottom 
   weighing three orders of magnitude greater than 
@@ -760,7 +760,8 @@ T^{-1}iT=-i
 % belle babar, phase 2
 
 \section{Interpreting the Standard Model}
-\subsection{LSZ, Wick's theorem and propagators}
+\subsection{Scattering amplitude and propagators}
+%\subsection{LSZ, Wick's theorem and propagators}
  Initial and final states %of quantum fields
   are built by successive applications
   of the raising (or particle creation) operator, $a^\dagger$,
@@ -830,32 +831,18 @@ T^{-1}iT=-i
  The on-shell requirement, that
   $| f \rangle$ and $| i \rangle$ 
   have fixed masses causes $(-\partial^2+m^2)\rightarrow 0$.
- This cancels exactly with the 
+ This term in the integral  cancels exactly with the 
   corresponding diverging term in the
   appropriate  propagator, 
   but  sets to zero the terms which do not have 
   this divergence.
  This is the mechanism by which final
   state particles are observed to be
-  on shell
+  on their mass shell, or on-shell,
   while allowing for interactions
   to happen between particles at
-  varying masses with varying probabilities.
-
- Crucial for the LSZ formulation are
-  two features of quantum fields,
-  that they are fully separable in the 
-  infinite limit,
-  $\langle 0 | \phi(x) | 0 \rangle = 0$,
-  and the they are states of definite momentum,
-  $ \langle k | \phi(x) | 0 \rangle = e^{-ikx}$.
- In the SM, which
-  allows for fields to interact, these
-  conditions are guaranteed by adjusting the
-  strengths of the couplings, $g_1,g_2,g_3$,
-  in a process called renormalization.
- Renormalized coupling parameters are
-  thus tied to a physical scale.
+  varying masses, off-shell,
+  with varying probabilities.
   
 \subsection{Path integrals and Feynman diagrams}\label{sec:PIandFD}
 
@@ -889,20 +876,34 @@ Z(J) = \langle 0 | 0 \rangle_J = \int \mathcal{D}\phi
   depicting possibly more than one interaction.
 
  To describe the scattering of fermions
-  with gauge bosons in the SM,
+  and gauge bosons in the SM,
   diagrams with the appropriate initial and final
   state particles are constructed from the 
-  vertices illustrated in Figure \ref{fig:smcouplings}.
+  vertices illustrated in Figure~\ref{fig:smcouplings}.
+ Three-point vertices are made
+  from the intersection of three line segments
+  at a point, and four-point vertices
+  are made from the intersection of four
+  line segments.
+ External lines correspond to real particles
+  which are observed in the final state
+  and are on-shell.
+ Internal lines correspond to virtual
+  particles that not observed in the 
+  final state and therefore 
+  may or may not be on-shell.
+
+ A diagram is tree-level if it 
+  uses the smallest number of vertices possible
+  to depict an interaction having the
+  correct initial and final states.
  For the case of two fermions, $\phi(x_1),\phi(x_2)$, which scatter
-  via a gauge boson that decays
+  via a gauge boson that subsequently decays
   to two possibly different fermions, $\phi(x'_1),\phi(x'_2)$,
-  the three possible diagrams are
-  illustrated in Figure \ref{fig:fenyman2by2}
- These diagrams, formed by combining the
-  fewest possible number of vertices to 
-  acheive the desired final state
-  are known generally as tree-level diagrams
-  and these specific diagrams
+  the three unique tree-level diagrams for a given 
+  configuration of $\phi(x_1),\phi(x_2),\phi(x'_1),\phi(x'_2),$ are
+  illustrated in Figure~\ref{fig:fenyman2by2}.
+ These specific diagrams 
   are depictions of the $s,t,u$ channels respectively,
   named after the Mandelstam variables,
   which are Lorentz scalar
@@ -914,20 +915,22 @@ $ t = $ & $ - (k_1 + k_1')^2 = $ & $-(k_2' - k_2')^2\;\;\;,$ \\
 $ u = $ & $ - (k_1 + k_2')^2 = $ & $-(k_2 - k_1')^2 \;\;\;.$
 \end{tabular}
 \end{equation}
-  Of the Mandelstam variables, $s$ is the square of the momenta
-  of the incoming particles in the center-of-mass (CM)
-  frame
-  and $\sqrt{s}$ is the variable used by experimentalists
+ The Mandelstam variable $s$ is the square of the momenta
+  of the incoming particles in the center-of-mass (CM) frame
+  and $\sqrt{s}$ is the typical variable used by experimentalists
   to discuss the energy of colliding beams of particles.
 
  Combining contributions from all
-  valid Feynman diagrams gives $W(J)$ where 
+  valid Feynman diagrams 
+  according to the stastical rules appropriate
+  for the particles which participate in the
+  interaction, gives $W(J)$ where 
 \begin{equation}
 Z(J)=e^{iW(J)}
 \end{equation}
   and the time ordered product of the fields
   can be found by taking the appropriate
-  functional derivative on $W$,
+  functional derivatives on $W$,
 \begin{equation}
  \langle 0 | \mathrm{T}\phi(x_1)\dots\phi(x_N) | 0 \rangle = 
   \delta_1\dots\delta_N i W(J) |_{J=0}\;\;\;.
@@ -935,7 +938,7 @@ Z(J)=e^{iW(J)}
   
 
 %%%%%%%%%%%%%
-\begin{figure}[!h]
+\begin{figure}[!htb]
  \center
  \caption[Illustrations of SM couplings]{
   The couplings for the SM gauge interactions.
@@ -957,12 +960,68 @@ Z(J)=e^{iW(J)}
 \end{figure}
 %%%%%%%%%%%%%
 
-\subsection{Scattering amplitudes and cross sections}
+\subsection{Renormalization}
+ Crucial for the LSZ formulation are
+  two features of quantum fields,
+  that they are fully separable in the 
+  infinite limit,
+  $\langle 0 | \phi(x) | 0 \rangle = 0$,
+  and that they are states of definite momentum,
+  $ \langle k | \phi(x) | 0 \rangle = e^{-ikx}$.
+ In the SM, which
+  allows for fields to interact, these
+  conditions are guaranteed by adjusting the
+  strengths of the fundamental couplings, $g_1,g_2,g_3$.
+ This ensures that the quantum states
+  remain properly normalized, and is thus
+  called renormalization.
 
- The experimentally measurable observable
-  is not the scattering amplitude directly,
-  but some finite distribution of data
-  which may be analyzed to reveal
+ Renormalization is necessary to account
+  for corrections to the tree-level propagators
+  and vertices which arise from contributions
+  of virtual particles connecting to 
+  form closed internal loops.
+ The lowest order, one-loop, diagrams
+  are illustrated in Figure~\ref{fig:oneloopfeyn}.
+ Renormalization is accomplished by introducing an energy scale,
+  and assuming that the couplings are small compared 
+  this this scale. 
+ The coupling constants are therefore
+  functions of energy 
+  and are quoted at a particular renormalization scale,
+  $\mu_R$.
+ 
+ %% Determining if a theory is renormalizable
+  % Srednicki 129, 18
+
+ %% Consequences of running coupling constants ..
+
+%%%%%%%%%%%%%
+\begin{figure}[!tb]
+ \center
+ \caption[One-loop corrections to vertices and propagator]{
+  Renormalization takes place via a modification
+   of the coupling parameters $g_1,g_2,g_3$ to account
+   for the contributions that loops of virtual
+   particles make on the propagators and vertices.
+  Below are diagrams keeping track of the
+   flow of momentum for one-loop corrections to the 
+   propagator and three and four point vertices.
+ } 
+ \includegraphics[width=0.3\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/intro/loop_propagator.pdf}
+ \includegraphics[width=0.3\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/intro/loop_vertex.pdf}
+ \includegraphics[width=0.3\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/intro/loop_vertex4p.pdf}
+    \label{fig:oneloopfeyn}
+\end{figure}
+%%%%%%%%%%%%%
+
+%\subsection{Scattering amplitudes and cross sections}
+\subsection{Cross sections and decay rates}
+
+ The scattering amplitude $\langle f | i \rangle$
+  is not a directly measurable observable.
+ What can be observed is some finite distribution
+  of data which may be analyzed to reveal
   information about the scattering amplitude.
  Quantum mechanics dictates that 
   only predictions of probability are possible,
@@ -974,7 +1033,7 @@ Z(J)=e^{iW(J)}
   the masses of the propagators
   and the orientation and efficiency of the detector.
 
- The quantity measured is therefore the 
+ A quantity typically measured is therefore the 
   interaction cross section, $\sigma$,
   and for the scattering of two incoming 
   particles going to $n'$ particles, $2\rightarrow n'$,
@@ -983,7 +1042,8 @@ Z(J)=e^{iW(J)}
  d\sigma = \frac{1}{4\abs{\mathbf{k}_1}_{\mathrm{CM}}}\abs{\mathcal{T}}^2 
   d\mathrm{LIPS}_{n'}(k_1 + k_2)
 \end{equation}
-  where the scattering matrix element, $\mathcal{T}$, is defined by 
+  where the scattering matrix element, $\mathcal{T}$,
+  is defined using Equation \ref{eq:lszformula}, as 
 \begin{equation}\label{eq:matrixelement}
 \langle f | i \rangle = (2\pi)^4\delta^4\left(\sum k_{\mathrm{in}}-\sum k_{\mathrm{out}}\right)
   i \mathcal{T}
@@ -991,34 +1051,126 @@ Z(J)=e^{iW(J)}
   and the Lorentz-invariant measure of the 
   phase space for the $n'$ outgoing particles is
 \begin{equation}\label{eq:dlips}
- d\mathrm{LIPS}_{n'}(k) = (2\pi)^4 \delta^4\left(k - \sum_{j=1}^{n'} \right )
+ d\mathrm{LIPS}_{n'}(k) = (2\pi)^4 \delta^4
+  \left(k - \sum_{j=1}^{n'}k'_i \right )
   \prod_{j=1}^{n'}dq_j'
 \end{equation}
  with the Lorentz-invariant differential $dq$.
 
  The cross section is used to calculate the rate
   at which a process occurs, but is
-  not the only relevant factor.
+  not the only relevant factor in determining
+  the overall production rate.
  The production rate of a given final state
   is also dependent on the incoming
   rate of possible interactions and is 
   known as luminosity, \lumi.
- It has the units of inverse area per unit time
+ Luminosity has the units of inverse area per unit time
   and the total number of events produced
   is therefore proportional to \tlumi.
  In any real detector, final state particles
-  are collected only within a finite detector
+  are collected only within a finite
   solid angle and the number of particles
   scattered into a given solid angle, $\Omega$, is given by
 \begin{equation}
  \frac{dN}{d\Omega} = \lumi \frac{d\sigma}{d\Omega}\;\;\;.
 \end{equation}
 
+
  %The rate at which a particular event occurs
  % is proportional to \lumi and the cross section 
  % of that interaction, so it is the
  % (time) integrated luminosity that determines 
  % the total number of events produced.
+
+ It is also possible for particles to decay
+  as $1\rightarrow n'$.
+ Massive particles decay to lighter ones
+  in both the fermion and boson sectors,
+  with all massive bosons able to 
+  spontaneously decay via the diagrams in
+  Figure~\ref{fig:smcouplings}.
+ Of the charged fermions, only the first
+  generation is stable for each type, and
+  neutrinos are not known to spontaneously
+  decay, but oscillate between flavors
+  while propagating in free space.
+ Like the differential cross section,
+  the differential decay rate is a function
+  of the scattering amplitude and
+  has integration measure $d\mathrm{LIPS}$, 
+\begin{equation}\label{eq:diffdecayrate}
+ d\Gamma = \frac{1}{2E}\abs{\mathcal{T}}^2d\mathrm{LIPS}_{n'}(k)\;\;\;.
+\end{equation}
+
+ The differential decay rate is 
+  inversely proportional to the energy
+  of the particle, $E=\sqrt{m^2 + p^2}$.
+ This means that
+  comparitively heavy particles will decay
+  faster than comparitively light ones
+  and that energetic particles
+  will appear to live longer 
+  for a stationary observer due to
+  relativistic time dilation effects.
+ The total decay rate of a given particle
+  is found by summing the decay rates from
+  each of the contributing processes,
+  and the primary decay channels and rates
+  for the fundamental particles
+  are given in Table \ref{tab:lifetimes}.
+
+ At CMS, the heaviest quark and the heaviest
+  lepton both decay before reaching
+  the detector volume.
+ This makes $b$ quarks the heaviest
+  fundamental particles which can be seen
+  to decay inside the detector,
+  and therefore an object of interest.
+ Additionally, their heavy mass means that they
+  couple strongly with the Higgs boson
+  which still has many properties that
+  are under investigation.
+ The $W$ and $Z$ bosons are both so 
+  massive that they decay before reaching
+  the innermost layers of the detector
+  and are often identified by their decay products
+  pointing back to a common vertex.
+ 
+%%%% Table SU(2) Representations
+\begin{table}[tb]
+\caption[Fundamental particle decay channels and rates]
+{
+ Below are listed the decay channels and 
+  rates for each of the unstable
+  fundamental particles.
+ At CMS, with the detection apparatus
+  located a finite distance away from the
+  interaction vertex, particles such as the
+  $W$, $Z$ and Higgs bosons,
+  as well as the $t$ and $tau$, decay before
+  reaching the first layer of the detector.
+}
+\label{tab:lifetimes}
+\begin{center}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{r|l|l|l}
+Particle & Primary decay modes(s) & Total rest-frame $d\Gamma$ & Typical decay location \\
+\hline\hline
+$W$ & $W\rightarrow \ell\nu$ & X & Before reaching CMS \\
+$Z$ & $Z\rightarrow f\overline{f}$ (for $2M_f < M_Z$) & X & Before reaching CMS \\
+$\tau$ & $\tau\rightarrow W \nu_\tau$ & X & Before reaching CMS \\
+$\mu$  & $\mu\rightarrow W \nu_\mu$ & X & After leaving CMS \\
+$t$    & $t\rightarrow Wb$ & X & Before reaching CMS \\
+$b$    & $b\rightarrow Wc$ & X & Inside CMS \\
+$c$    & $c\rightarrow Ws$ & X & Inside CMS \\
+$s$    & $s\rightarrow Wu$ & X & Inside CMS
+\end{tabular}
+}
+\end{center}
+\end{table}
+%%%%%%%
+ 
 
 
 
@@ -1073,7 +1225,8 @@ Z(J)=e^{iW(J)}
   and are held together by gluons.
  Evidently, the binding energy of the
   quarks has a form such that
-  after some small distance, the energy
+  after a distance of roughly $10^{-15}$ meters,
+  the energy
   stored in the gluon field is greater
   than the energy needed to create a
   quark-antiquark pair, bringing the pair
