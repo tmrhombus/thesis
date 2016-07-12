@@ -1,0 +1,31 @@
+\documentclass{standalone}
+\usepackage{feynmp}
+
+% Needed to interpret generated *.1, *.2 etc. as ps files.
+\DeclareGraphicsRule{*}{mps}{*}{} 
+\unitlength=0.9mm
+
+
+\begin{document}
+\begin{fmffile}{ppxgGraph} % this is the name for mpost
+\fmfframe(10,10)(10,10){ % sizes of offset
+%\fmfframe(10,13)(10,9){ % sizes of offset
+%\begin{fmfgraph*}(40,10)
+\begin{fmfgraph*}(40,20)
+ \fmfset{arrow_len}{2mm}
+ \fmfset{zigzag_len}{4mm}
+ \fmfset{curly_len}{4mm}
+ \fmfset{arrow_ang}{25}
+  \fmfleft{i1,i2} \fmflabel{$q$}{i1} \fmflabel{$q$}{i2} %%%
+  \fmfright{o1,o2,o3} \fmflabel{$\chi$}{o1} \fmflabel{$\chi$}{o2} %\fmflabel{$\gamma$}{o3} %%%
+  \fmf{fermion}{i1,v1,v2,i2}
+%  \fmf{dbl_zigzag,label=$M$}{v1,vv1}
+%  \fmf{dbl_plain}{o1,vv1,o2}
+  \fmf{dbl_dots,label=$M$}{v1,vv1}
+  \fmf{dots_arrow}{o1,vv1,o2}
+%\fmffreeze
+  \fmf{zigzag,label=$\gamma$}{v2,o3}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}

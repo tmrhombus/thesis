@@ -8,9 +8,11 @@
 \begin{document}
 \begin{fmffile}{wlnGraph} % this is the name for mpost
 \fmfframe(10,10)(10,10){ % sizes of offset
-%\fmfframe(10,13)(10,9){ % sizes of offset
-%\begin{fmfgraph*}(40,10)
 \begin{fmfgraph*}(40,20)
+ \fmfset{arrow_len}{2mm}
+ \fmfset{zigzag_len}{4mm}
+ \fmfset{curly_len}{4mm}
+ \fmfset{arrow_ang}{25}
   \fmfleft{i1} \fmflabel{$W$}{i1}
   \fmfright{o1,o2} \fmflabel{$\ell$}{o2} \fmflabel{$\nu$}{o1}
   \fmf{zigzag}{i1,v1}

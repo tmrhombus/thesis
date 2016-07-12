@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{feynmp}
+
+% Needed to interpret generated *.1, *.2 etc. as ps files.
+\DeclareGraphicsRule{*}{mps}{*}{} 
+\unitlength=0.9mm
+
+\begin{document}
+\begin{fmffile}{wcGraph} % this is the name for mpost
+\fmfframe(10,13)(10,9){ % sizes of offset
+\begin{fmfgraph*}(40,10)
+  \fmfleft{i1,i2} \fmflabel{$s,d$}{i2} \fmflabel{$g$}{i1}
+  \fmfright{o1,o2} \fmflabel{$W^-$}{o2} \fmflabel{$c$}{o1}
+  \fmf{fermion}{i2,v2}
+  \fmf{fermion}{v1,o1}
+  \fmf{zigzag}{v2,o2}
+  \fmf{gluon}{i1,v1}
+  \fmffreeze  % after making straight lines, freeze the frame
+  \fmf{fermion,label=$c$,tension=0}{v2,v1} %alternative is to set line tension=0
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}

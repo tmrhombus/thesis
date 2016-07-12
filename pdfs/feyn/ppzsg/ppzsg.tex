@@ -8,10 +8,12 @@
 \begin{document}
 \begin{fmffile}{ppzsgGraph} % this is the name for mpost
 \fmfframe(10,10)(10,10){ % sizes of offset
-%\fmfframe(10,13)(10,9){ % sizes of offset
-%\begin{fmfgraph*}(40,10)
 \begin{fmfgraph*}(40,20)
-  \fmfleft{i1,i2} \fmflabel{$\overline{q}$}{i1} \fmflabel{$q$}{i2}
+ \fmfset{arrow_len}{2mm}
+ \fmfset{zigzag_len}{4mm}
+ \fmfset{curly_len}{4mm}
+ \fmfset{arrow_ang}{25}
+  \fmfleft{i1,i2} \fmflabel{$q$}{i1} \fmflabel{$q$}{i2}
   \fmfright{o1} %\fmflabel{$\gamma$}{o1}
   \fmf{fermion}{i1,v1,i2}
   \fmf{zigzag,label=$Z/\gamma$}{v1,o1}

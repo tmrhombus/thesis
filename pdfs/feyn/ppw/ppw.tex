@@ -9,7 +9,11 @@
 \begin{fmffile}{ppwGraph} % this is the name for mpost
 \fmfframe(10,10)(10,10){ % sizes of offset
 \begin{fmfgraph*}(40,20)
-  \fmfleft{i1,i2} \fmflabel{$q$}{i2} \fmflabel{$\overline{q}'$}{i1}
+ \fmfset{arrow_len}{2mm}
+ \fmfset{zigzag_len}{4mm}
+ \fmfset{curly_len}{4mm}
+ \fmfset{arrow_ang}{25}
+  \fmfleft{i1,i2} \fmflabel{$q$}{i2} \fmflabel{$q'$}{i1}
   \fmfright{o1} \fmflabel{$W$}{o1}
   \fmf{fermion}{i1,v1}
   \fmf{fermion}{v1,i2}
