@@ -39,6 +39,7 @@ Of the four experiments, two (CMS and ATLAS) are built for
  b-mesons and CP violation.
 
 \subsection{LHC pre-acceleration}
+
 To accelerate protons to their collision energy,
  a multi-stage procedure is used and 
  the major components of the accelerator infrastructure
@@ -65,7 +66,7 @@ Inside the PS, bunches are accelerated to
 After the SPS, bunches of protons are sent into
  the LHC.
 
-\begin{figure}[tb]
+\begin{figure}[htb]
 \caption[The LCH accelerator complex at CERN]{
  Before protons are released into the LHC
   for final acceleration and collision, they pass through
@@ -124,7 +125,7 @@ The Lorentz-invariant magnetic force on a
   velocity $\mathbf{v}$ in a 
   magnetic field $\mathbf{B}$ is
 \begin{equation}\label{eq:bforce}
- \mathbf{B}=q\mathbf{v}\times\mathbf{B}
+ \mathbf{F_B}=q\mathbf{v}\times\mathbf{B}
 \end{equation}
  and the relativistic version of Newton's second
  law states
@@ -141,7 +142,12 @@ These can be solved to find that the magnetic field
  \mathbf{B}=\frac{p}{qR}
 \end{equation}
  where $R = 4.3$ km.
-[todo - unit conversion]
+At individual beam energies of 4 and 6.5 TeV
+ in 2012 and 2015 respecyively,
+ the rest mass of the proton constitutes
+ a negligible fraction of the proton momentum
+ and the minimum magnetic field required by the
+ magnets is [todo - unit conversion].
 
 The rate at which a particular collision 
  process occurs
@@ -201,7 +207,7 @@ The tracks are used in conjunction with the
  $3.8$ T magnetic field to measure the momentum of these particles
  and
  this information is used for identifying
- the primary interaction vertex %, defined as
+ the $pp$ interaction vertex %, defined as
  %the vertex having the highest pt sum of tracks
  as well as locating secondary vertices 
  from the decay of heavy flavor quarks
@@ -255,8 +261,8 @@ The angle $\theta$ is commonly replaced by pseudorapidity,
 \end{equation}
  since the distribution of particles
  is roughly constant as a function of $\eta$.
-For the calorimeters, “barrel” refers to the region of $|\eta| < 1.4442$,
- and “endcap” to the region $3.0 > |\eta| > 1.566$.
+For the calorimeters, "barrel" refers to the region of $|\eta| < 1.4442$,
+ and "endcap" to the region $3.0 > |\eta| > 1.566$.
 Instrumentation cables are run through the
  gap between the barrel and endcap,
  so this area has detecting components. 
@@ -521,6 +527,6 @@ The timing resolution of RPCs is on the order of 1 ns.
 \includegraphics[width=\textwidth]{pdfs/experiment/cms_muon.png}
 \end{figure}
  
- %\subsection{Trigger System}
+%\subsection{Trigger and Data Acquisition}
 
 

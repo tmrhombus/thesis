@@ -72,10 +72,16 @@
 \tableofcontents*
 
 \clearpage
-\listoftables
 
-\clearpage
 \listoffigures
+\begingroup
+\let\clearpage\relax
+\listoftables
+\endgroup
+
+%\listoffigures
+%\listoftables 
+%\clearpage
 
 \clearpage
 % NOMENCLATURE

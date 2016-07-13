@@ -1,0 +1,184 @@
+
+\chapter{Event Reconstruction}\label{sec:reconstruction}
+
+ Real data collected from the detector
+  and simulated data output from Geant4
+  consist of time-correlated energy deposits
+  in the various subdetectors of CMS.
+ As a result of the coordinated designs 
+  of the subdetectors, the final-state 
+  particles which arise from $pp$ collisions 
+  at the LHC can be individually identified
+  and reconstructed using the combined
+  information from the entirity of CMS.
+ The associated global event description
+  from this particle-flow (PF) reconstruction
+  provides excellent performance for
+  the identification of electrons and muons,
+  as well as for vertex identification
+  and the evaluation of \met.
+ 
+\section{Track and Primary Vertex Reconstruction}
+ The subdetector closest to the interaction vertex
+  is the tracker, which records precise
+  information about the trajectories of 
+  charged particles as they pass through it.
+ Combined with the magnetic field, 
+  this allows for the measurement of the
+  momenta of these particles as well as a
+  means of identifying the the location of
+  the primary interaction.
+
+ Tracks are identified via an iteritive process. 
+ The first tracks to be reconstructed
+  are those which pass strict seeding
+  criteria, designed to have a moderate
+  efficiency, but negligibly small
+  fake rate.
+ Then the detector hits associated
+  with these tracks are masked
+  and the remaining hits are used to
+  form track seeds with slightly relaxed
+  criteria.
+ This operation is repeated, with every
+  iteration imposing more complex and time-consuming
+  seeding, filtering and track fitting algorithms.
+ 
+% In 2012, the average number of interactions
+%  happening at every bunch crossing was 21,
+%  and in 2015 it was 
+ Because bunches of protons instead of single protons
+  are made to cross in the LHC, 
+  multiple collisions can take place during the same
+  bunch crossing.
+ The vertex with the highest scalar sum
+  transverse momentum, \pt,
+  of tracks and passing further quality selections
+  based on the goodness of fit for the tracks
+  and the number of tracks associated with a given vertex
+  is chosen as the primary vertex (PV).
+
+ In \ppwbblnbb events, the two $b$ quarks and
+  the lepton from the $W$ decay all leave energy
+  deposits in the tracker, thus making the choice
+  of PV unambiguous.
+ However, in the \pploneg events,
+  the only visible final state object is a photon,
+  and photons do not leave hits in the tracker.
+ This makes the identification of the PV
+  in the monophoton analysis difficult
+  and motivates the using of variables that
+  are less sensitive to correct PV identification.
+  
+\section{Electron ID and Reconstruction}
+
+ Electrons are reconstructed using tracker
+  hits and ECAL deposits.
+ The seed of an electron candidate is selected as 
+  an energy deposit in the ECAL with $E_T > 4$ \GeV
+  having nearby deposits in the tracker.
+ As electrons move in magnetic fields,
+  they emit bremsstrahlung radiation
+  tangental to their flight path
+  and this radiation both appears in the detector, 
+  and alters the course of the electron.
+
+ The effects of this radiation are taken
+  into account via the Gaussian Sum Filter (GSF)
+  track fitting algorithm.
+ This algorithm uses weighted sums of Gaussian
+  functions to describe electron energy loss
+  and thus allows for non-Gaussian corrections
+  to the fitting of tracks.
+ In the CMS detector, 
+  bremsstrahlung from electrons results in the
+  emmision of photons in an extended strip
+  in the $\phi$ direction and electron
+  superclusters (SCs) are made by 
+  including the energy deposits from 
+  these photons in the ECAL as part of the
+  candidate electron object.
+
+ Further requirements during the reconstruction of
+  the electron improve the purity of selection.
+ The SC and the GSF track are required to 
+  be separated by no more than $\abs{\eta}<0.02$
+  and $\abs{\phi}<0.15$ and the fraction of
+  energy deposited in the HCAL directly behind
+  the SC, and the SC is required to be no more
+  than 15\%.
+ 
+
+\section{Photon ID and Reconstruction}
+
+ Photons are reconstructed using the same ECAL
+  clustering algorithms as are used for electrons.
+ This allows for
+  the simultaneous reconstruction of
+  photons that have and have not split to $e\overline{e}$
+  pairs.
+ The size of the SC is determined dynamically
+  and the center is determined to be the barycenter
+  of the distribution, with weights assigned
+  using the logarithm of the fractional energy deposits
+  of the ECAL crystals clustered in the SC.
+
+ In an ideal tracker, photons would not interact 
+  at all and objects that leave signarues
+  similar to those of photons could be rejected
+  through the rejection of tracks.
+ However, some photons do convert to $e\overline{e}$
+  pairs inside the tracker volume which leave tracks,
+  so the rejection of tracks is not a perfect way 
+  to distinguish between photons and electrons.
+
+\section{Muon ID and Reconstruction}
+
+ Muon identification is performed using
+  two reconstruction and filtering methods to produce 
+  `tracker muons' and `standalone muons' which are 
+  combined to form  `global muons.'
+ Tracker muons are identified starting with
+  a track, $\pt>0.5$ \GeV and $p>2.5$ \GeV,
+  which is then extrapolated to the muon system.
+ If the distance between the the extrapolated
+  track and the nearest hit in one of the muon 
+  chambers is less than 3 cm, a tracker muon
+  is identified.
+ Tracker muons are also identified if the 
+  pull between the extrapolated track and the
+  matched station hit is less than four, where
+  pull is defined as the distance between
+  the track and the station hit divided by 
+  the uncertainties on both measured quanties.
+ Tracker muons are built from the inside of the
+  detector towards the outside, and 
+  standalone muons are built in the other direction.
+ Only hits in the muon stations are used to 
+  reconstruct standalone muons, with the 
+  additional constraint that the path reconstructed
+  from the hits points back toward the 
+  interaction region.
+ Thus, the tracker muon algorithm is well-suited
+  for the identification of low-\pt muons by having
+  low thresholds and requiring only one track
+  and one station hit, while the standalone
+  muon algorithm is aimed at high-\pt muons
+  which have the energy to penetrate multiple layers
+  of muon stations to form tracks which can be
+  traced back to the interaction.
+ Global muons are required to pass the criteria for both 
+  standalone muons and tracker muons, and,
+  starting with the standalone muons, 
+  the global muon trajectory is refit using information from both 
+  the muon stations and the tracker,
+  yielding an improved energy resolution than either one.
+ %For muons with $\pt<200$ \GeV, the resolution of the tracker
+
+
+
+
+\section{Missing Transverse Energy}
+
+\section{Jet ID and Secondary Vertices}
+
