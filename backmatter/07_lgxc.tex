@@ -1,19 +1,14 @@
 
-\chapter{Monophoton Analysis [TODO WESLEY COMMENTS] }\label{sec:lgxc}
+\chapter{Monophoton Analysis}\label{sec:lgxc}
 
-While studying the Standard Model process \ppwbb is a means
- for probing the physics associated with jets,
- hadronization and the modeling of the proton 
- parton distribution function, the monophoton analysis,
- charactarized by a final state consisting of \gmet 
- is also of interest for validating SM and possibly extending it
- via the search for dark matter (DM).
-One interpretation presented in this work
- is the SM process \ppzgnng  in which the \met is interpreted as coming from the
+ The second analysis presented in this thesis
+  is of the monophoton final state discribed 
+  in Section~\ref{sec:znngproduction}.
+The data are analyzed in the context of the 
+ SM process \ppzgnng  in which the \met is interpreted as coming from the
  invisible decay of the \z boson, \znn.
-As discussed in Section \ref{sec:lgproduction},
- it is also possible to extend this cross section measurement
- into a dark matter search under the interpretation 
+The data are also analyzed
+ as a dark matter search under the interpretation 
  that the \met arises from the 
  annihilation of incoming particles into DM 
  and the $\gamma$ is initial state radiation 
@@ -25,31 +20,22 @@ This analysis is performed using protons colliding at
  \s 13 \TeV provided by the LHC and detected by
  the CMS detector.
 
-\section{Previous Measurements}
-
-A similar search was performed by the ATLAS experiment~\cite{Aaboud:2016uro}
- using 3.2\fbinv of pp collision data at \s 13 \TeV
- collected in 2015, and no evidence for new physics was found. 
-The fiducual cross section for 
- the monophoton final state with photon $\etg > 150 \GeV$
- and $\met > 150 \GeV$ was measured to be below 17.8 \fbinv.
-A prior search~\cite{Khachatryan:2014rwa} at the CMS 
- experiment used the LHC run 1 data collected in 2012 at
- \s 8 \TeV, and set a cross section upper limit for the monophoton final
- state with photon $\etg > 145\GeV$ and $\met > 140\GeV$ at 13 \fbinv. 
-
 \section{Event Selection}\label{subsec:lgevent_selection}
 
 The sample of data analyzed was collected using 
  a trigger that requires at least one photon
- candidate with $\etg > 165 \GeV$ and 
+ HLT SC candidate with $\ptg > 165 \GeV$.
+Because photons interact electromagnetically, they 
+ are expected to deposit all of their energy in the
+ ECAL, while jets typically have a neutral component and 
+ deposit some energy in the HCAL as well. 
+To increase photon efficiency, the trigger therefore also
  requires at least 90\% of the energy deposited in 
- the calorimeters to be deposited in the ECAL
- to reject jets. 
+ the calorimeters to be deposited in the ECAL.
 This trigger is 98\% efficient at selecting photons
  which pass the other analysis selections.
 Events passing the trigger are further required to
- have at least one photon with $\etg > 175\GeV$
+ have at least one PF photon with $\ptg > 175\GeV$
  in the barrel fiducial region ($\abs{\eta} < 1.44$).
 
 To distinguish photons from electrons, which leave a similar
@@ -60,57 +46,60 @@ To distinguish photons from jets, selections based on calorimetric
  information and isolation are applied. 
 The fraction of energy deposited in the ECAL compared 
  to the total deposit in the calorimeters
- is tighened relative to the trigger to be 95\%
- and the shower shape variable in the $\eta$ direction,
-  $\sieie$, described in Section \ref{sec:sieie},
+ is tightened relative to the trigger to be 95\%
+ and the shower shape variable describing the spread
+ of the energy deposits in the $\eta$ direction,
+  $\sieie$, %described in Section \ref{sec:sieie},
  is required to be $\sieie < 0.0102$. 
+Additionally, the photon is required to pass
+ the isolation requirements described in Section \ref{sec:photonreco}.
 
   %Ref.~\cite{Khachatryan:2015iwa},
 %encodes the width of the electromagnetic shower in the $\eta$
 %direction, which is generally larger in showers from hadronic
 %activity. 
 
-For a photon object to be considered isolated,
- scalar sums of the transverse momenta of PF charged hadrons, neutral
- hadrons, and photons within a cone of $\Delta R = \sqrt{(\Delta
-  \eta)^2 + (\Delta \phi)^2} < 0.3$ around the candidate photon must
- individually fall below bounds defined for 80\% signal
- efficiency. 
-Only the PF candidates that do not overlap with the 
- electromagnetic shower of the candidate photon are used in the 
- isolation sums.
-
 Because photon objects are not reconstructed from tracks,
  there is an ambiguity in identifying the collision
  vertex that the photon originates from in the presence 
  of pileup collisions.
-
 Association of a vertex to the photon candidate impacts the photon in two ways. 
-First, the photon momentum direction is given by a straight line connecting
-the ECAL cluster position and the vertex. Second, the isolation sum 
-using the PF charged hadrons include only the candidates whose tracks
-are associated to the vertex. While the first effect is minor and is
-not relevant for this analysis, the second will cause photon
-candidates that are actually non-isolated to appear otherwise, if the 
-vertex is misassigned.  In practice, photon momentum is always
-computed with respect to the primary vertex, defined as the vertex
-with the highest $\sum \pt^2$ of the associated tracks.  However, for 
-the charged hadron isolation sum, all vertices are considered, and the 
-maximum value of the isolation sum is used as a conservative estimate
-of the true isolation sum (worst isolation).
+First, the photon momentum direction is defined by the
+ straight line which connects
+ the ECAL cluster position and the identified vertex. 
+Additionally, the isolation sum 
+ uses only the PF charged hadrons
+ having tracks
+ associated to the vertex. 
+While the first effect is minor and is
+ not relevant for this analysis, the second will cause photon
+ candidates that are actually not isolated to appear
+ isolated, if the 
+ vertex is misassigned.  
+In practice, photon momentum is always
+ computed with respect to the PV,
+ but for the charged hadron isolation sum,
+ all vertices are considered, and the 
+ maximum value of the isolation sum is used as a conservative estimate
+ of the true isolation sum.
 
 To reduce the contribution of backgrounds arising from 
  occurances in the CMS detector which did not originate from
- collisions, the pulse in the seed crystal of the photon cluster
+ collisions, the energy pulse which seeded the photon cluster
  is required to be within $\pm 3\ns$ of the time expected
  for particles from a collision, and the cluster must not
  be so narrow that it is consistent with a cluster formed by a single crystal.  
 To reduce contamination from beam halo, the ECAL
  crystals not  associated with the photon candidate are 
  examined for evidence of the passage of a minimum-ionizing
- particle roughly parallel to the beam axis (beam halo tag).
+ particle (MIP) roughly parallel to the beam axis (beam halo tag).
 If at least  4.9 \GeV of energy is found deposited along
  this trajectory, the event is rejected.
+This value was determined by through optimizing the
+ signal to background photon efficiencies, with
+ a $95\%$ identification for prompt photons and
+ a $20\%$ misidentificatin rate for deposits originating
+ in beam halo events.
 
 %To further
 %suppress the beam halo background, possible paths of halo muons that
@@ -127,31 +116,61 @@ If at least  4.9 \GeV of energy is found deposited along
 %energies are calibrated to account for pileup effects and detector
 %response.
 
-The candidate events are required to have \met $> 170$\GeV.
+The candidate events are required to have \met $> 170$~\GeV.
 %after
 %adjusting \ptvecmiss for the difference between simple momentum sums
 %of PF candidates and calibrated jet momenta. 
 The azimuthal opening
 angle between the candidate photon and $\vmet$ is required to be
-greater than 2 to ensure that the main source of \met is not photon
+greater than 2 radians to ensure that the main source of \met is not photon
 energy mismeasurement.  
 
 Because jet energy mismeasurement can also
-give rise to \met, events are rejected if the minimum azimuthal opening
-angle between $\vmet$ and up to four leading jets (\minDphiMETj) is
-less than 0.5.
+ give rise to \met, events are rejected if the minimum azimuthal opening
+ angle between $\vmet$ and up to four leading jets (\minDphiMETj) is
+ less than 0.5 radians.
+As was the case in the $\wbb$ analysis,
+ jets are reconstructed using the PF algorithm, but
+ in this analysis the jet clustering cone size is $\Delta R < 0.4$ radians.
 
 Finally, events are also vetoed if they contain 
  a charged lepton (an electron or a muon) with $\pt >
-10\GeV$ that is separated from the photon by $\Delta R > 0.5$.
+10$ \GeV that is separated from the photon by $\Delta R > 0.5$ radians.
 
-After applying all of the selection criteria, 77 candidate events are 
-found in data.
+The effects of the various cuts with regard to the 
+ total number of events passing selections on the data 
+ is illustrated in Table \ref{tab:lgcutflow}.
+After applying all of the selection criteria,
+ 77 candidate events are found in data.
 
-\section{Estimation of Contributions}
+\begin{table}
+\caption[Monophoton Cutflow]
+{
+Listed below are the raw number of events in data 
+ passing the selection listed in the first column
+ as well as all selections in higher rows.
+}
+\begin{center}
+\begin{tabular}{r|l}
+Selection  & Events passing selection \\ 
+\hline\hline
+ PF photon, $\ptg > 175$ \GeV, $\abs{\eta^\gamma}<1.44$  &   X \\
+ $\abs{t^{\mathrm{seed}}}<3$ ns                          &   X \\
+ $MIP < 4.9$ \GeV                                        &   X \\
+ $\met > 170$ \GeV                                       &   X \\
+ $\DphiMETg > 2$ radians                                 &   X \\
+ $\DphiMETj > 0.5$ radians                               &   X \\
+ Veto charged lepton                                     &   X
+\end{tabular}
+\end{center}
+\label{tab:lgcutflow}
+\end{table}
+
+\section{Estimation of Background Contributions}
 
 The dominant SM processes contributing to this 
- phase space are the associated productions of a \z
+ phase space of the candidate events 
+ are the associated productions of a \z
  or \w boson with a high-energy photon. 
 If the \z boson decays into a  neutrino-antineutrino pair, 
  the final state exhibits a high-\et photon and large
@@ -160,7 +179,7 @@ Similarly, if the \w boson decays into a lepton-neutrino
  pair and  the lepton is outside of the detector acceptance
  or fails reconstruction, the event appears to be \gmet.
  Together, these two processes account for approximately
-  75\% of the simulated events and are
+  75\% of the events as
  estimated using Monte Carlo (MC) simulations. 
 Hard-scattering events are generated with \MGfiveAMC\
   version 2.2~\cite{Alwall:2014hca} at leading order (LO) in QCD,
@@ -172,33 +191,65 @@ Minimum-bias simulations are overlaid to model pileup interactions.
 
  \subsection{Reweighting}\label{subsubsec:lg_reweighting}
 To account for differences arising from imperfect modeling of the data in
- the simulation, a total correction factor $\rho$ of $0.99\pm0.06$ is applied to all 
+ the simulation, a total correction factor $\rho = 0.99 \pm 0.06$ is applied to all 
  MC-based  estimates. 
-This is the product of individual correction factors taken as the
- ratios of the efficiencies measured in data and in simulation. 
-They include
- $0.99\pm0.016$ for photon identification measured using \zee events,
- $1.00\pm0.0246$ for pixel seed measured using \zee events, and
- $1.00\pm0.05$ for worst isolation, beam halo tag and lepton veto measured using \zgnng events.
-Generated samples are then weighted event by event with a product of two factors. 
+This is the product of individual correction factors which 
+ are each taken as the
+ ratio of the efficiency measured in data and in simulation.
+The efficiency for photon identification is measured
+ and provided centrally using \zee events as 
+ $0.99\pm0.016$ for photon identification measured using \zee events.
+The photon seed trigger efficiency is also measured using \zee events,
+ and is found to be $1.00\pm0.0246$ using jet triggers as a reference.
+The efficiencies for 
+ worst isolation, beam halo tag and lepton veto 
+ were measured using events in data which were triggered as having at least
+ one muon and on MC using a combination of Drell-Yan, \ttbar and $VV$ 
+ samples requiring \zgmmg events to be identified by
+ the dimuon pair with mass in the range $61<m_{\mu\mu}<121$ \GeV.
+The measured relative efficiencies are $1.00\pm0.05$.
+
+Generated samples are weighted on an event by event basis with a product of two factors. 
 The first factor matches the distribution of the generator-level photon
  \pt to that calculated at next-to-next-to-leading order (NNLO) in QCD using the 
- \DYRes~\cite{Catani:2015vma} calculator.
-The second factor, taken from
+ \DYRes~\cite{Catani:2015vma} calculator and
+ the second factor, taken from
  Refs.~\cite{Denner:2014bna,Denner:2015fca}, further corrects this distribution
  to account for electroweak next-to-leading order (NLO) effects. 
 
+%\begin{figure}[htb]
+%\caption[Distributions of \pt and \met in the \pploneg analysis]
+% {The photon \pt and \met\ distribution for the candidate sample,
+%  compared with estimated contributions from SM backgrounds, 
+%  here QCD$\gamma$ refers to $\gamma$+jet background and the
+%  background uncertainity includes statistical and systematic error. }
+%\centering
+%\includegraphics[width=8cm,height=8.0cm]{/Users/rhombus/CMS/Thesis/thesis/pdfs/lgxc/fromb/photon_pt8.pdf}
+%\includegraphics[width=8cm,height=8.0cm]{/Users/rhombus/CMS/Thesis/thesis/pdfs/lgxc/fromb/met8.pdf}
+%\label{fig:ptmetstack}
+%\end{figure}
+
  \subsection{\vg Estimates}
-After accounting for event selection efficiency difference between data and MC,
+After accounting for the event selection efficiency difference between data and MC,
  respectively $42.1 \pm 6.3$ and $10.7 \pm 1.5$ events are estimated
  from \zgnng\ and \wglng. 
 Four sources of systematic uncertainty on \zg and \wg estimates are considered:
- PDF and scale uncertainties, which are 5.37\% and 8.9\% respectively;
- electroweak correction uncertainties,
- where the full correction is conservatively taken as the uncertainty
- which is 11\% for \zg and 7\% for \wg;
- scale factors, which are 6\%;
- and the sytematic uncertainty due to jet/\met/$\gamma$ energy scale and pileup, which is 6.2\%. 
+PDF and scale uncertainties are
+ found using the the LHAPDF/PDF4LHC recommendations
+ of varying the scales up and down by a factor of 2 
+ and using PDf sets from CTEQ, MSTW and NNPDF 
+ to be 5.37\% and 8.9\% respectively.
+Electroweak correction uncertainties
+ are estimated conservatively as the quoted uncertainties
+ which are 11\% for \zg and 7\% for \wg.
+Scale factors are estimated to have an uncertainty of 6\%
+ which mostly  arises from the statistical limitations of the data samples
+ used.
+The sytematic uncertainty due to jet/\met/$\gamma$
+ energy scale and pileup, is estimated at 6.2\%
+ by shifting the energy of the respective PF object
+ and observing the relative change in the number
+ of events passing selections.  
 %To gain confidence in the estimates from simulation, control regions
 % dominated by the various backgrounds and having negligible
 % contributions from the signal, are defined in the data. 
@@ -225,7 +276,8 @@ This class of events is modeled by an electron proxy event sample
  Sec.~\ref{subsec:lgevent_selection}, except the photon candidate is required to have
 a pixel seed. 
 The number of electron proxy events is then scaled by
- $(1-\epsilon)/\epsilon$ to yield an estimated contribution of $7.4 \pm 1.2$ from
+ $(1-\epsilon)/\epsilon$ where $\epsilon$ is the efficiency
+ to yield an estimated contribution of $7.4 \pm 1.2$ from
  electron misidentification events. 
 The dominant uncertainty in the 
  estimate is the statistical uncertainty in the tag-and-probe fit, 
@@ -234,7 +286,7 @@ The dominant uncertainty in the
  on which the fit procedure is repeated. 
 The standard deviation of the number
  of \zee events obtained from the fits is then propagated
- to the uncertainty in $\epsilon$.
+ to the uncertainty in the efficiency.
 
  \subsection{Non-collision Backgrounds}
 Non-collision backgrounds,  from  things such as detector noise,
@@ -245,8 +297,8 @@ Templates for anomalous signals, cosmic ray muons, and beam halo events
  are obtained by inverting the shower shape and beam halo tag requirements,
  and are fitted to the timing distribution of the candidate sample.
 The only nonnegligible residual contribution to the candidate sample
- is found to arise from the beam halo, with an estimated $5.9\pm4.7$ events,
- where the uncertainty is from the template fit. 
+ is found to arise from the beam halo, with an estimated $5.9\pm4.7$ events
+ coming directly from the template fit.
 %As a cross-check, a fit to the azimuthal angle ($\phi$) distribution of the candidate
 % sample is performed. 
 %Beam halo EM showers are observed to concentrate around
@@ -269,46 +321,42 @@ The total background expectation from these processes is $3.05\pm 0.67$ events,
  
 \section{Results}
 
-After applying our full selection criteria,we observe 77 events in 2.32 fb$^{-1}$ of data.
+After applying the full selection criteria,
+ 77 events in 2.32 fb$^{-1}$ of data remain.
 Table~\ref{tab:BkgSummaryC}
-% ~\ref{tab:BkgSummaryC1} 
 shows the estimated number of events and uncertainty from each background for the full 2015 run.
-
-
-The \pt spectrum and particle flow \met of the full combination of our selected candidate events and estimated backgrounds can be seen in Figure \ref{fig:ptmetstack}
-and the \pt/\met and number of jets distrbution is shown in Figure \ref{fig:ptmetstack1}.
+The \pt spectrum and PF \met of the full
+ combination of selected candidate events and
+ estimated backgrounds can be seen in Figure \ref{fig:ptmetstack}
+ along with distributions of \pt/\met and 
+ the number of jets.
 %Likewise, Figure~\ref{fig:ratio_stack} and Figure~\ref{fig:addplots} shows the jet \pt, nvertices and $E_{T}^{\gamma}$/\met, $E_{T}^{\gamma}$/ jet \pt  for our selected candidate events and estimated backgrounds for the full candidate selection.
 %Since data are compatible with the standard model expectation, upper limits on new physics processes cross
 %sections are set.
 
 \begin{figure}[htb]
-\caption[Distributions of \pt and \met in the \pploneg analysis]
+\caption[Signal region distributions in the \pploneg analysis]
  {The photon \pt and \met\ distribution for the candidate sample,
-  compared with estimated contributions from SM backgrounds, 
-  here QCD$\gamma$ refers to $\gamma$+jet background and the
+  compared with estimated contributions from SM backgrounds are shown.
+% on top
+%  and the photon \pt/\met\ and number of jets distribution for the candidate sample
+%  are shown below.
+  Here QCD$\gamma$ refers to $\gamma$+jet background and the
   background uncertainity includes statistical and systematic error. }
-\centering
-\includegraphics[width=8cm,height=8.0cm]{/Users/rhombus/CMS/Thesis/thesis/pdfs/lgxc/fromb/photon_pt8.pdf}
-\includegraphics[width=8cm,height=8.0cm]{/Users/rhombus/CMS/Thesis/thesis/pdfs/lgxc/fromb/met8.pdf}
+\begin{centering}
+\begin{tabular}{cc}
+\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/lgxc/fromb/photon_pt8.pdf} &
+\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/lgxc/fromb/met8.pdf}
+%\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/lgxc/fromb/ptmet8_err.pdf} &
+%\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/lgxc/fromb/njet30_err_withdphi.pdf}
+\end{tabular}
+\end{centering}
 \label{fig:ptmetstack}
 \end{figure}
 
 
-\begin{figure}[!h]
-\caption[Distributions of \pt/\met and $n_\mathrm{jets}$ in the \pploneg analysis]{
- The photon \pt/\met\ and number of jets distribution for the candidate sample, 
- compared with estimated contributions from SM backgrounds.
- The  background uncertainity shown includes statistical and systematic errors. }
-\centering
-\includegraphics[width=8cm,height=8.0cm]{/Users/rhombus/CMS/Thesis/thesis/pdfs/lgxc/fromb/ptmet8_err.pdf}
-\includegraphics[width=8cm,height=8.0cm]{/Users/rhombus/CMS/Thesis/thesis/pdfs/lgxc/fromb/njet30_err_withdphi.pdf}
-\label{fig:ptmetstack1}
-\end{figure}
-
-
-
 %\begin{table}[htbp]
-\begin{table}[!h]
+\begin{table}[!htb]
 \caption[Estimated yields for \pploneg]
 {
  Summary of estimated backgrounds and observed total number of candidates for 2.32 fb$^{-1}$ of 2015 data.
@@ -335,9 +383,10 @@ Data               & 77    \\
 }
 \end{table}
 
-\subsection{\ppzgnng Cross Section Measurement}
+\subsection[\ppzgnng Cross Section Measurement]
+{${\boldsymbol{\ppzgnng}}$ Cross Section Measurement}
 
-The  \ppzgnng cross section for $\ptg >175 \GeV$ in the rapidity
+The  \ppzgnng cross section for $\ptg >175$ \GeV in the
  range $\abs{\eta} <$ 1.4 is calculated using the formula
 
 \begin{equation}
@@ -379,12 +428,13 @@ The uncertainty on the integrated luminosity is 2.7$\%$~\cite{LUM-13-001}.
 A summary of the systematic uncertainties are shown in Table ~\ref{tab:sysfull1}.
 
 \begin{table}[htbp]
+\caption[Systematic uncertainties in \pploneg]{Summary of systematic unceratinties for signal and different background sources.}
 \centering
-{\scriptsize
+%{\scriptsize
 \resizebox {\textwidth }{!}{ % 
-\begin{tabular}{|c|c|c|c|c|c|c|}
+\begin{tabular}{c|c|c|c|c|c|c}
+Sources & \zgnng [\%] & \wglng [\%] & $j$ faking $\gamma$ [\%] & $e$ faking $\gamma$ & $\gamma j$ & Other bkgs [\%] \\
 \hline
-Sources & \zgnng [\%] & \wglng [\%] & Jets faking photon [\%] & Electron faking photon & gamma-jet & Other bkgs [\%] \\
 \hline
 Luminosity & 2.7    & 2.7  & - & - & 2.7 &  2.7 \\
 \hline
@@ -392,25 +442,22 @@ PDF and Scale & 5.37 & 8.9 & - & -& -& -\\
 \hline
 EWK corrections &  11 & 7 & - & - & - & -\\ 
 \hline
-Jets faking photon & - & - & 30 & - & - & -\\ 
+$j$ faking $\gamma$ & - & - & 30 & - & - & -\\ 
 \hline
-Elecron faking photon & - & -& -& 20 & - & -\\ 
+$e$ faking $\gamma$ & - & -& -& 20 & - & -\\ 
 \hline
-Jet, MET, photon energy scale &  6 & 6 &-& - & 6 & 6\\ 
+$j$,\met,$\gamma$ energy scale &  6 & 6 &-& - & 6 & 6\\ 
 \hline
-Scale Factors & 6 & 6 & -& - & 6 & 6\\ 
-\hline
-
+Scale Factors & 6 & 6 & -& - & 6 & 6
 \end{tabular}}
-\caption{Summary of systematic unceratinties for signal and different background sources.}
-\label{tab:sysfull1}}
+\label{tab:sysfull1}%}
 \end{table}
 
 The measured cross section for \ppzgnng  for photon $p_T >$ 175 GeV within
  rapidity range $\mid \eta_{\gamma}\mid < $1.4
  is 
 \begin{equation}
- 64.06 \pm 12.14({stat.}) \pm 12.88({sys.}) \pm 1.72({lumi.}) \fb.
+ 64.06 \pm 12.14(\mathrm{stat}) \pm 12.88(\mathrm{syst}) \pm 1.72(\mathrm{lumi})\;\; \fb.
 \end{equation}
 The NNLO therotical cross section is $65.55\pm 0.02$ \fb
   where the uncertainty includes only the scale variaitons. 
@@ -431,6 +478,8 @@ Interpreting these results as setting limits on the
 
 
 \begin{table}[ht]
+\caption[Upper limits on DM cross section for vector $m_M = 10$ \TeV]
+{Observed (expected) 90\%CL upper limits on the DM production cross section $\sigma$ for vector mediator mass 10 TeV. }
 \centering
 \begin{tabular}{cc}
 \hline\hline
@@ -449,13 +498,11 @@ Mass DM [GeV] & $\sigma$ [fb] \\
 1000  & 3.370(2.862) \\
 \hline
 \end{tabular}
-\caption{Observed (expected) 90\%CL upper limits on the dark-matter production cross section $\sigma$ for mediator mass 10 TeV. }
 \label{table:vxslimits}
 \end{table}
 
-
-
-\begin{table}[ht]
+\begin{table}[htb]
+\caption[Upper limits on DM cross section for axial-vector $m_M = 10$ \TeV]{Observed (expected) 90\%CL upper limits on the DM production cross section $\sigma$ for axial vector  mediator mass of 10 \TeV }
 \centering
 \begin{tabular}{cc}
 \hline\hline
@@ -474,9 +521,56 @@ Mass DM [GeV] & $\sigma$ [pb] \\
 1000  & 3.30(2.814)\\
 \hline
 \end{tabular}
-\caption{Observed (expected) 90\%CL upper limits on the dark-matter production cross section $\sigma$ for fixed mediator mass 10 TeV }
 \label{table:avxslimits}
 \end{table}
+
+
+
+Figure~\ref{fig:2d} shows the upper limits on the ratio of the cross section with respect
+to the theoretical predictions ($\mu=
+\sigma^{95\%}/\sigma_{Th}$) for the vector and axial-vector
+mediator scenarios on the $m_\chi$-$m_M$ plane. The solid red and 
+black curves are the expected and observed exclusion contours. The uncertainty on the 
+expected upper limit includes the experimental uncertainties. For the simplified DM model
+considered, a mediator mass of up to 600~\GeV is excluded for $m_\chi <10$ \GeV.
+
+Exclusion contours in Figure~\ref{fig:2d} are also translated into the 
+$m_\chi$-$\sigma_{SI/SD}$ plane as shown in Figure~\ref{fig:cont} where $\sigma_{SI/SD}$ are the 
+spin-independent/dependent DM-nucleon scaterring cross sections~\cite{dmforum}. For 
+these contours, we use 90\% CL to do a direct comparison
+with the limits from the direct detection experiments~\cite{pico,pico1,lux1june}.
+
+For DM EFT model with a contact interaction of type $\gamma\gamma\chi\overline{\chi}$, upper limits are placed on the production cross section, which are then translated into the lower limits on the suppression scale $\Lambda$. The 95\% CL observed and expected lower limits on $\Lambda$ as a function of dark matter mass $m_{\chi}$ are shown in Figure~\ref{fig:DMEWKlimits}. Values of $\Lambda$ up to 542\GeV are excluded at $95\%$ CL.
+
+\begin{figure}[htb]
+\caption[Exclusion plots in $m_{\chi}-m_M$ plane]{95\% CL upper limits on $\mu$= $\sigma$/$\sigma_{Th}$ in the $m_{\chi}$-$M_{M}$ plane for vector and axial-vector mediator, assuming couplings $g_{q}$ =0.25 and $g_{\chi}$ =1.
+The The solid red and black curves are the expected and observed exclusion contours. 
+The dotted black contours around the observed limit and the
+ dotted red contours around the expected limit represent the
+ one standard deviation theoretical uncertainties in the cross
+ section and the combination of the statistical and experimental
+ systematic uncertainties, respectively.}
+\label{fig:2d}
+\begin{center}
+\includegraphics[width=0.4\textwidth]{pdfs/lgxc/fromb/V.pdf}
+\includegraphics[width=0.4\textwidth]{pdfs/lgxc/fromb/AV.pdf}
+\end{center}
+\end{figure}
+
+\begin{figure}[htb!]
+\caption[Exclusion limits on DM-nucleon cross section]{The 90\% CL exclusion limits on the $\chi$-nucleon scattering cross section in a simplified model of dark matter production involving a vector and axial-vector operator as a function of the dark matter mass $m_{\chi}$.}\label{fig:cont}
+\begin{center}
+\includegraphics[width=0.4\textwidth]{pdfs/lgxc/fromb/SI.pdf}
+\includegraphics[width=0.4\textwidth]{pdfs/lgxc/fromb/SD.pdf}
+\end{center}
+\end{figure}
+
+\begin{figure}[htb!]
+\caption[Expected lower limit for EFT cutoff parameter $\Lambda$]{(a) The 95\% CL observed and expected lower limits on $\Lambda$ for a dimension-7 operator EFT model with a contact interaction of type $\gamma\gamma\chi\overline{\chi}$ as a function of dark matter mass $m_{\chi}$.}\label{fig:DMEWKlimits}
+\begin{center}
+\includegraphics[width=0.4\textwidth]{pdfs/lgxc/fromb/EWK_lambda.pdf}
+\end{center}
+\end{figure}
 
 
 

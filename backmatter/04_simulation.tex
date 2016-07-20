@@ -1,7 +1,6 @@
-  
-
 
 \chapter{Event Simulation and Reconstruction}\label{sec:simulation}
+
 %%%%%%%%%%%%%
 \section{Simulation of Events}
  Vital to the analysis of the data
@@ -28,10 +27,13 @@
  There are two complimentary methods used
   in producing a simulation of the 
   collision event, the direct calculation 
-  of a scattering amplitude
-  (also known as a matrix element, ME),
+  of the scattering amplitude
+  (also known as the matrix element, ME),
   and the showering of particles as they
   decay, hadronize and radiate.
+ Particles produced in the in the 
+  collision before showering
+  and hadronization are referred to as prompt.
 
  As discussed in Section~\ref{sec:protonstructure},
   protons are composite objects which form
@@ -41,23 +43,27 @@
   parton distribution functions (PDFs)
   which describe the probability of
   finding a given constituent particle,
-  or parton, to contain a given fraction
+  or parton, to have a given fraction
   of the momentum of the proton.
+ Parton densities vary as a function of the
+  energy used to probe the proton and the
+  quantity of energy absorbed by the 
+  proton is known as the momentum transfer, $Q$.
  The PDF is thus actually a set of density functions,
-  one for each parton taken into account,
+  one for each parton taken into account
+  and for each momentum transfer, 
   and examples of the CTEQ6M parton distribution
-  function at two values of of momentum transfer, $Q$,
   are shown in Figure~\ref{fig:cteqpdfs}.
  Weighted with probabilities from the PDF set
   and summed over,
-  MEs are calculated explicitly from Feynman
+ MEs are calculated explicitly from Feynman
   diagrams which have initial state particles
   found in the PDF and the desired
   final state. 
  
 
 %%%%%%%%%%%%%
-\begin{figure}[tb]
+\begin{figure}[htb]
  \center
  \caption[Example Parton Distribution Function from CTEQ6M]{
   Below are proton PDFs shown at two different values of
@@ -66,7 +72,7 @@
    momentum fraction carried by the parton
    and the vertical axis shows the parton density.
  } 
- \includegraphics[width=0.6\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/experiment/cteq_pdf.pdf}
+ \includegraphics[width=0.9\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/experiment/cteq_pdf.pdf}
     \label{fig:cteqpdfs}
 \end{figure}
 %%%%%%%%%%%%%
@@ -97,14 +103,24 @@
   all colored particles.
 
 \subsection{Monte Carlo Generators}
- The two primary generators used in this
-  thesis are MadGraph/MadEvent and Pythia.
- MadGraph is strictly a ME generator
-  which interfaces with MadEvent for
-  event generation
-  and Pythia is mostly used for hadronization 
-  and showering.
+
+Each of the MC generators used in this
+ thesis are designed to serve one of two
+ purposes. 
+They either calculate MEs for hard
+ scattering processes or they compute
+ corrections such as hadronization
+ or NLO effects.
+
+% The two primary generators used in this
+%  thesis are \MADGRAPH/\MADEVENT and \PYTHIA.
+% \MADGRAPH is strictly a ME generator
+%  which interfaces with \MADEVENT for
+%  event generation
+%  and \PYTHIA is used for hadronization 
+%  and showering.
   
+\subsubsection{Matrix Element Calculators}
  For a given $2\rightarrow n'$
   scattering process, the differential cross section is
   a function of the Lorentz-invariant phase space
@@ -112,12 +128,13 @@
  To calculate the cross section within 
   a finite phase space, $d\sigma$
   is integrated and 
-  MadGraph numerically does this
+  \MADGRAPH numerically does this at LO
   through the sampling of random numbers.
  The phase space can be interpreted as a multidimensional 
   hypercube spanning all degrees of freedom
   for all final state particles
-  and Equation~\ref{eq:dsigma} is used
+  and Equation~\ref{eq:dsigma} is 
+  integrated over using the \VEGAS package
   to calculate a weight, $dw$, for each point
   sampled in the phase space.
  The average
@@ -125,18 +142,35 @@
 
  To produce events with the frequency
   predicted by the theory being modeled,
-  MadEvent uses the Von Neumann method to unweight events.
+  \MADEVENT uses the Von Neumann method to unweight events.
  For each event, a random number, $g$, is generated 
   between 0 and 1 and compared to the ratio
   $dw/dw_{\mathrm{max}}$ where $dw_{\mathrm{max}}$
   is the largest event weight sampled.
  If $dw/dw_{\mathrm{max}}>g$ then the event is kept
   and is otherwise rejected.
- Accepted events generated with MadGraph/MadEvent in this 
+ Accepted events generated with \MADGRAPH/\MADEVENT in this 
   way have the same frequency and follow the same
   kinematic distributions as predicted
   from the input Equation~\ref{eq:dsigma}.
+   
+ A Monte Carlo for FeMtobarn (\MCFM)
+  also uses \VEGAS to perform phase space
+  integragions, but does so at NLO 
+  instead of LO.
+ With a much larger phase space to 
+  integrate over, \MCFM performs optimizations
+  on the integration and produces weighted events.
+ With weighted events, an estimation of
+  a cross section to NLO accuracy can be made,
+  but is made only at the level of partons interacting,
+  and in particular does not include corrections
+  due to hadronization effects.
+ Estimations made by \MCFM thus need to 
+  be corrected for hadronization effects
+  before being compared with observed cross sections.
 
+\subsubsection{Showering and NLO Corrections}
  Pythia performs hadronization using the
   Lund string model in which quarks are
   confined to the ends of strings and
@@ -147,12 +181,14 @@
  The underlying event is modeled in Pythia
   as a set of $2\rightarrow 2$ processes
   which are correlated with each other via the
-  color connections present in the proton, 
+  color connections present in the proton.
+
+
   and the set of parameters used by Pythia
   to perform calculations is referred to as 
   the tune.
  
- % \subsection{MadGraph}
+ % \subsection{\MADGRAPH}
  % \subsection{Pythia}
  % \subsection{MCFM}
  % \subsection{Powheg}
@@ -204,8 +240,14 @@
   the identification of electrons and muons,
   as well as for vertex identification
   and the evaluation of \met.
+ As a result of the PF reconstruction
+  of an event, particles are identified
+  and placed into the mutually exclusive
+  categories:
+  charged and neutral hadrons, photons, 
+  electrons and muons.
  
-\subsection{Track and Primary Vertex Reconstruction}
+\subsection{Track and Primary Vertex Reconstruction}\label{sec:vertexreco}
  The subdetector closest to the interaction vertex
   is the tracker, which records precise
   information about the trajectories of 
@@ -244,6 +286,9 @@
   based on the goodness of fit for the tracks
   and the number of tracks associated with a given vertex
   is chosen as the primary vertex (PV).
+ The other vertices are referred to as
+  pileup vertices and the associated collision
+  products as pileup.
 
  In \ppwbblnbb events, the two $b$ quarks and
   the lepton from the $W$ decay all leave energy
@@ -295,30 +340,6 @@
   the SC, and the SC is required to be no more
   than 15\%.
  
-
-\subsection{Photon ID and Reconstruction}
-
- Photons are reconstructed using the same ECAL
-  clustering algorithms as are used for electrons.
- This allows for
-  the simultaneous reconstruction of
-  photons that have and have not split to $e\overline{e}$
-  pairs.
- The size of the SC is determined dynamically
-  and the center is determined to be the barycenter
-  of the distribution, with weights assigned
-  using the logarithm of the fractional energy deposits
-  of the ECAL crystals clustered in the SC.
-
- In an ideal tracker, photons would not interact 
-  at all and objects that leave signarues
-  similar to those of photons could be rejected
-  through the rejection of tracks.
- However, some photons do convert to $e\overline{e}$
-  pairs inside the tracker volume which leave tracks,
-  so the rejection of tracks is not a perfect way 
-  to distinguish between photons and electrons.
-
 \subsection{Muon ID and Reconstruction}
 
  Muon identification is performed using
@@ -362,22 +383,86 @@
   yielding an improved energy resolution than either one.
  %For muons with $\pt<200$ \GeV, the resolution of the tracker
 
+\subsection{Lepton Isolation}
 
+After having been identified and reconstructed, 
+ leptons are also assessed in terms of their
+ isolation.
+Isolation is an important variable for 
+ differentiating prompt leptons from 
+ leptons resulting from secondary decays or
+ hadronization effects and is defined as
+\begin{equation}
+\label{eq:iso}
+I =\frac{ \sum\pt^{\mathrm{charged}}+{\mathrm{max}}(0,\sum\pt^{\gamma}+\sum\et^{\mathrm{neutral}}-0.5\cdot\pt^{\mathrm{PU}})}{\pt^\ell},
+\end{equation}
+ with the sum running over the PF candidates (hadrons, electrons, photons)
+ in a cone of size $\Delta R < 0.4~(0.3)$ around the muon (electron) direction.
+ %where $\Delta R = \sqrt {\smash[b]{ (\Delta \eta)^2 + (\Delta \phi)^2}}$.
+The last term in the numerator, $\pt^{\mathrm{PU}}$ ,
+ is a correction for pileup effects
+ and is based on the scalar sum of transverse momenta of charged particles
+ not associated with the primary vertex that are within the isolation cone.
 
+\subsection{Photon ID and Reconstruction}
 
-%\subsection{Missing Transverse Energy}
+ Photons are reconstructed using the same ECAL
+  clustering algorithms as are used for electrons.
+ This allows for
+  the simultaneous reconstruction of
+  photons that have and have not split to $e\overline{e}$
+  pairs.
+ The size of the SC is determined dynamically
+  and the center is determined to be the barycenter
+  of the distribution, with weights assigned
+  using the logarithm of the fractional energy deposits
+  of the ECAL crystals clustered in the SC.
+ The angular width of the cluster is \sieie 
+  and photons tend to have narrow deposits.
 
-\subsection{Jet ID and Secondary Vertices}
+ In an ideal tracker, photons would not interact 
+  at all and objects that leave signarues
+  similar to those of photons could be rejected
+  through the rejection of tracks.
+ However, some photons do convert to $e\overline{e}$
+  pairs inside the tracker volume which leave tracks,
+  so the rejection of tracks is not a perfect way 
+  to distinguish between photons and electrons.
+
+ For a photon object to be considered isolated,
+  scalar sums of the transverse momenta of PF charged hadrons, neutral
+  hadrons, and photons within a cone of $\Delta R = \sqrt{(\Delta
+   \eta)^2 + (\Delta \phi)^2} < 0.3$ around the candidate photon must
+  individually fall below bounds defined for 80\% signal
+  efficiency.
+ Only the PF candidates that do not overlap with the
+  electromagnetic shower of the candidate photon are used in the
+  isolation sums.
+
+\subsection{Missing Transverse Energy}
+
+The transverse mass of the \w boson
+ is defined in Equation \ref{eq:iso},
+ and is a  natural discriminator against non-$\w$ final states
+ such as QCD multijet events,
+ that have a lepton candidate and $\vmet$,
+ but a relatively low value of $\mt$.
+In calculating \mt, the \met is corrected for noise in the
+ ECAL and HCAL \cite{WZCMS:2010}.
+ and corrections to limit the effects of
+ pileup are also included \cite{CMS:8TeVMET}.
+
+\subsection{Jet ID and Secondary Vertices}\ref{sec:jetsvreco}
  The reconstruction
   of jets is accomplished using the anti-$k_t$
-  clustering algorithm on particles identified 
+  clustering algorithm on particles identified
   in the PF.
  The anti-$k_t$ algorithm is both infrared and collinear
-  safe, meaning that it is stable against 
-  soft (low energy) radiation getting clustered into individual jets, and 
+  safe, meaning that it is stable against
+  soft (low energy) radiation getting clustered into individual jets, and
   also stable against hard (high energy) jets splitting
   collinearly and affecting the shape of the jet.
- 
+
  Jets are corrected in simulation and in data to remove
   energy believed to come from elsewhere than the PV,
   thus removing the luminosity dependence of the jet.
@@ -388,12 +473,12 @@
   of the jet, an absolute correction is applied,
   and in data, one further correction on the relative
   energy scale is applied.
- After all of these corrections are applied, 
+ After all of these corrections are applied,
   simulated jets are observed to have
   sharper energy resolution than is observed,
-  so jets in MC smeared in energy
+  so jets in MC are smeared in energy.
 
- Bottom quarks have a relatively long lifetime 
+ Bottom quarks have a relatively long lifetime
   and are the heaviest fundamental particle
   that has be seen to decay inside the volume of the CMS detector.
  A $b$ quark produced in a $pp$ collision at CMS
@@ -404,12 +489,15 @@
   since it is not the PV but is still a vertex associated
   with the event, is called a secondary vertex, SV.
  The tagging of $b$-jets is accomplished using a multivariate
-  analysis technique in which information from variables
-  such as the number and energy of tracks that appear to
-  be displaced from the PV, the presence of SVs or of
-  soft leptons is all combined into a single discriminator value.
-  
- 
+  analysis technique in which information about
+  the number and energy of tracks associated
+  with the SV and their corresponding alignment
+  with the SV, as well as the presence and energies of
+  soft leptons is combined into a single discriminator value.
+
+% define c jets and light jets ? 
+
+
 %  for an unstable particle, 
 %of 1.5 ps,
 %  they decay after about 450 $\mu$m
