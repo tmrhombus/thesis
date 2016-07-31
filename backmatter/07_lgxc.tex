@@ -2,7 +2,7 @@
 \chapter{Monophoton Analysis}\label{sec:lgxc}
 
  The second analysis presented in this thesis
-  is of the monophoton final state discribed 
+  is of the monophoton final state described 
   in Section~\ref{sec:znngproduction}.
 The data are analyzed in the context of the 
  SM process \ppzgnng  in which the \met is interpreted as coming from the
@@ -12,10 +12,10 @@ The data are also analyzed
  that the \met arises from the 
  annihilation of incoming particles into DM 
  and the $\gamma$ is initial state radiation 
- recoiling against thie process. 
+ recoiling against the process. 
 Under this interpretation, limits are set on the
  cross section of DM as a function of the 
- mediator mass for vector and axiel-vector models. 
+ mediator mass for vector and axial-vector models. 
 This analysis is performed using protons colliding at
  \s 13 \TeV provided by the LHC and detected by
  the CMS detector.
@@ -24,7 +24,8 @@ This analysis is performed using protons colliding at
 
 The sample of data analyzed was collected using 
  a trigger that requires at least one photon
- HLT SC candidate with $\ptg > 165 \GeV$.
+ HLT SC candidate with $\ptg > 165 \GeV$
+ as described in Section~\ref{sec:hlt}.
 Because photons interact electromagnetically, they 
  are expected to deposit all of their energy in the
  ECAL, while jets typically have a neutral component and 
@@ -84,8 +85,9 @@ In practice, photon momentum is always
  of the true isolation sum.
 
 To reduce the contribution of backgrounds arising from 
- occurances in the CMS detector which did not originate from
+ occurrences in the CMS detector which did not originate from
  collisions, the energy pulse which seeded the photon cluster
+ described in Section~\ref{sec:photonreco}
  is required to be within $\pm 3\ns$ of the time expected
  for particles from a collision, and the cluster must not
  be so narrow that it is consistent with a cluster formed by a single crystal.  
@@ -98,7 +100,7 @@ If at least  4.9 \GeV of energy is found deposited along
 This value was determined by through optimizing the
  signal to background photon efficiencies, with
  a $95\%$ identification for prompt photons and
- a $20\%$ misidentificatin rate for deposits originating
+ a $20\%$ misidentification rate for deposits originating
  in beam halo events.
 
 %To further
@@ -131,7 +133,8 @@ Because jet energy mismeasurement can also
  less than 0.5 radians.
 As was the case in the $\wbb$ analysis,
  jets are reconstructed using the PF algorithm, but
- in this analysis the jet clustering cone size is $\Delta R < 0.4$ radians.
+ in this analysis the jet clustering cone size is $\Delta R < 0.4$ radians
+ as opposed to 0.5 radians.
 
 Finally, events are also vetoed if they contain 
  a charged lepton (an electron or a muon) with $\pt >
@@ -154,13 +157,11 @@ Listed below are the raw number of events in data
 \begin{tabular}{r|l}
 Selection  & Events passing selection \\ 
 \hline\hline
- PF photon, $\ptg > 175$ \GeV, $\abs{\eta^\gamma}<1.44$  &   X \\
- $\abs{t^{\mathrm{seed}}}<3$ ns                          &   X \\
- $MIP < 4.9$ \GeV                                        &   X \\
- $\met > 170$ \GeV                                       &   X \\
- $\DphiMETg > 2$ radians                                 &   X \\
- $\DphiMETj > 0.5$ radians                               &   X \\
- Veto charged lepton                                     &   X
+ Photon kinematics/trigger/ID                            &  109384    \\
+ $\met > 170$ \GeV                                       &  304       \\
+ $\DphiMETg > 2$ radians                                 &  183       \\
+ Veto charged lepton                                     &  149       \\
+ $\DphiMETj > 0.5$ radians                               &  77 
 \end{tabular}
 \end{center}
 \label{tab:lgcutflow}
@@ -180,11 +181,11 @@ Similarly, if the \w boson decays into a lepton-neutrino
  or fails reconstruction, the event appears to be \gmet.
  Together, these two processes account for approximately
   75\% of the events as
- estimated using Monte Carlo (MC) simulations. 
+ estimated using MC simulations. 
 Hard-scattering events are generated with \MGfiveAMC\
-  version 2.2~\cite{Alwall:2014hca} at leading order (LO) in QCD,
- with  \NNPDFthree LO ($\as = 0.130$) as the parton distribution function.
-Parton shower and hadronization is performed by \PYTHIA{}8.2~\cite{Sjostrand:2014zea}.
+  version 2.2~\cite{Alwall:2014hca} at LO in QCD,
+ with  \NNPDFthree as the PDF.
+Parton shower and hadronization is performed by \PYTHIA8.2~\cite{Sjostrand:2014zea}.
 Generated particles are processed through the full \GEANT-based simulation of the CMS 
  detector \cite{GEANT, GEANTdev} and event reconstruction used for data. 
 Minimum-bias simulations are overlaid to model pileup interactions.
@@ -211,11 +212,11 @@ The measured relative efficiencies are $1.00\pm0.05$.
 
 Generated samples are weighted on an event by event basis with a product of two factors. 
 The first factor matches the distribution of the generator-level photon
- \pt to that calculated at next-to-next-to-leading order (NNLO) in QCD using the 
+ \pt to that calculated at NNLO in QCD using the 
  \DYRes~\cite{Catani:2015vma} calculator and
  the second factor, taken from
  Refs.~\cite{Denner:2014bna,Denner:2015fca}, further corrects this distribution
- to account for electroweak next-to-leading order (NLO) effects. 
+ to account for electroweak NLO effects. 
 
 %\begin{figure}[htb]
 %\caption[Distributions of \pt and \met in the \pploneg analysis]
@@ -240,12 +241,13 @@ PDF and scale uncertainties are
  and using PDf sets from CTEQ, MSTW and NNPDF 
  to be 5.37\% and 8.9\% respectively.
 Electroweak correction uncertainties
- are estimated conservatively as the quoted uncertainties
+ are estimated conservatively as the quoted
+ uncertainties~\cite{Denner:2014bna,Denner:2015fca}
  which are 11\% for \zg and 7\% for \wg.
 Scale factors are estimated to have an uncertainty of 6\%
  which mostly  arises from the statistical limitations of the data samples
  used.
-The sytematic uncertainty due to jet/\met/$\gamma$
+The systematic uncertainty due to jet/\met/$\gamma$
  energy scale and pileup, is estimated at 6.2\%
  by shifting the energy of the respective PF object
  and observing the relative change in the number
@@ -256,7 +258,7 @@ The sytematic uncertainty due to jet/\met/$\gamma$
 As a crosscheck, the total contribution from \zgnng is estimated
  in data using a sample of \zgllg candidates,
  where the leptons from the decay of the Z boson are removed and considered as
- \met~\cite{monojet2014}. 
+ \met. 
 This provides an estimate of $64.6 \pm 17.6$, 
  where the uncertainty is dominated by the size of the sample.
 
@@ -291,14 +293,14 @@ The standard deviation of the number
  \subsection{Non-collision Backgrounds}
 Non-collision backgrounds,  from  things such as detector noise,
  cosmic rays, and beam halo, are estimated from the time distribution of the cluster seeds
- since each process exhibits a disctintive time distribution when the cluster is
+ since each process exhibits a distinctive time distribution when the cluster is
  in the ECAL barrel. 
 Templates for anomalous signals, cosmic ray muons, and beam halo events
  are obtained by inverting the shower shape and beam halo tag requirements,
  and are fitted to the timing distribution of the candidate sample.
 The only nonnegligible residual contribution to the candidate sample
- is found to arise from the beam halo, with an estimated $5.9\pm4.7$ events
- coming directly from the template fit.
+ is found by fitting the template shapes to data
+ and arises from the beam halo, with an estimated $5.9\pm4.7$ events.
 %As a cross-check, a fit to the azimuthal angle ($\phi$) distribution of the candidate
 % sample is performed. 
 %Beam halo EM showers are observed to concentrate around
@@ -309,10 +311,10 @@ The only nonnegligible residual contribution to the candidate sample
 
  \subsection{Minor SM Processes}
 The SM processes \wlng, \zllg, $W(l\nu)$ and $\gamma+jets$
- are generated with \MADGRAPH{}5$\_aMC@NLO$ at LO~\cite{Madgraph_new}
+ are generated with \MGAMC  at LO~\cite{Madgraph_new} % \MADGRAPH{}5$\_aMC@NLO$ at LO~\cite{Madgraph_new}
  with up to 2 jets and then
  processed with \PYTHIA6.426 generator~\cite{Pythia6} for showering and hadronization,
- with the \NNPDFthree LO($\as = 0.130$) parton distribution function.
+ with the \NNPDFthree LO PDF.
 The total background expectation from these processes is $3.05\pm 0.67$ events,
  where the uncertainty includes the statistical and systematic uncertainty due
  to scale factor and jet/\met/$\gamma$ energy scale.
@@ -424,31 +426,31 @@ The uncertainty on the photon energy scale is about $1.5\%$
  %POG prescription~\cite{met}. 
 Contributions from the jet energy scale are accounted for in the  uncertainty on  
 the \met. 
-The uncertainty on the integrated luminosity is 2.7$\%$~\cite{LUM-13-001}.
+The uncertainty on the integrated luminosity is 2.7$\%$~\cite{ref:CMSLumiCalc}.
 A summary of the systematic uncertainties are shown in Table ~\ref{tab:sysfull1}.
 
 \begin{table}[htbp]
-\caption[Systematic uncertainties in \pploneg]{Summary of systematic unceratinties for signal and different background sources.}
+\caption[Systematic uncertainties in \pploneg]{Summary of systematic uncertainties for signal and different background sources, shown in \%.}
 \centering
 %{\scriptsize
 \resizebox {\textwidth }{!}{ % 
 \begin{tabular}{c|c|c|c|c|c|c}
-Sources & \zgnng [\%] & \wglng [\%] & $j$ faking $\gamma$ [\%] & $e$ faking $\gamma$ & $\gamma j$ & Other bkgs [\%] \\
+Sources & \zgnng & \wglng & $\gamma j$ & $j$ faking $\gamma$ & $e$ faking $\gamma$ & Other bkgs \\
 \hline
 \hline
-Luminosity & 2.7    & 2.7  & - & - & 2.7 &  2.7 \\
-\hline
-PDF and Scale & 5.37 & 8.9 & - & -& -& -\\ 
-\hline
-EWK corrections &  11 & 7 & - & - & - & -\\ 
-\hline
-$j$ faking $\gamma$ & - & - & 30 & - & - & -\\ 
-\hline
-$e$ faking $\gamma$ & - & -& -& 20 & - & -\\ 
-\hline
-$j$,\met,$\gamma$ energy scale &  6 & 6 &-& - & 6 & 6\\ 
-\hline
-Scale Factors & 6 & 6 & -& - & 6 & 6
+Luminosity                      & 2.7  & 2.7 & 2.7  & -  & -  &  2.7 \\
+\hline                                             
+PDF and Scale                   & 5.37 & 8.9 & -    & -  & -  & -    \\ 
+\hline                                             
+EWK corrections                 &  11  & 7   & -    & -  & -  & -    \\ 
+\hline                                             
+Jet background                  & -    & -   & -    & 30 & -  & -    \\ 
+\hline                                             
+Electron background             & -    & -   & -    & -  & 20 & -    \\ 
+\hline                                             
+$j$,\met,$\gamma$ energy scale  &  6   & 6   & 6    & -  & -  & 6    \\ 
+\hline                                             
+Scale Factors                   & 6    & 6   & 6    & -  & -  & 6
 \end{tabular}}
 \label{tab:sysfull1}%}
 \end{table}
@@ -459,9 +461,9 @@ The measured cross section for \ppzgnng  for photon $p_T >$ 175 GeV within
 \begin{equation}
  64.06 \pm 12.14(\mathrm{stat}) \pm 12.88(\mathrm{syst}) \pm 1.72(\mathrm{lumi})\;\; \fb.
 \end{equation}
-The NNLO therotical cross section is $65.55\pm 0.02$ \fb
-  where the uncertainty includes only the scale variaitons. 
-The measured cross section agrees well with the NNLO theoritical cross section
+The NNLO theoretical cross section is $65.55\pm 0.02$ \fb
+  where the uncertainty includes only the scale variations. 
+The measured cross section agrees well with the NNLO theoretical cross section
  and this agreement with the SM prediction constrains
  possible DM models.
 
@@ -469,60 +471,82 @@ The measured cross section agrees well with the NNLO theoritical cross section
 \label{ssec:lim_DM}
 Interpreting these results as setting limits on the
  cross section of a DM particle as a function of 
- DM mass, Tables~\ref{table:vxslimits} and \ref{table:avxslimits}
- show 90\% confidence level (CL) upper limits on the
- production cross sections provided infor the Vector
- and the Axial-vector model for a mediator mass of 10 \TeV. 
+ DM mass, Table~\ref{table:lg_xslimits}
+ shows 90\% confidence level (CL) upper limits on the
+ production cross sections provided for the vector
+ and the axial-vector model for a mediator mass of 10 \TeV. 
 %Using a type-I error rate ($\alpha$) of 0.10 instead of the ``industry standard'' 0.05 used in exotic searches because we want to compare our results against other experiments for which $\alpha=0.10$ is considered standard.
-%We are working on other mass points for the dark matter and will present results soon.
 
 
 \begin{table}[ht]
-\caption[Upper limits on DM cross section for vector $m_M = 10$ \TeV]
-{Observed (expected) 90\%CL upper limits on the DM production cross section $\sigma$ for vector mediator mass 10 TeV. }
+\caption[Upper limits on DM cross sections for $m_M = 10$ \TeV]
+{Observed (expected) 90\%CL upper limits
+  on the DM production cross section assuming a 
+  vector or axial-vector mediator coupling,
+  with mass $m_M=10$~\TeV. }
 \centering
-\begin{tabular}{cc}
-\hline\hline
-Mass DM [GeV] & $\sigma$ [fb] \\
+\begin{tabular}{r|l|l}
+%$m_M=10$~\TeV  & \multicolumn{2}{c}{$\sigma(\ppgmccm)$ [fb]} \\
+     {}        & \multicolumn{2}{c}{$\sigma(\ppgmgcc)$ [fb]} \\
+$m_\chi$ [GeV] & $g_{Mq}$ vector  & $g_{Mq}$ axial-vector    \\
 \hline
-1  & 3.821(3.242)  \\  
 \hline
-10  & 3.820(3.244)  \\  
-\hline
-50  & 3.827(3.249) \\
-\hline
-150  & 3.826(3.254)\\
-\hline 
-500  & 3.588(3.052) \\
-\hline
-1000  & 3.370(2.862) \\
-\hline
+1     & $3.821 \pm 3.242$  & $3.782 \pm 3.211$ \\ 
+10    & $3.820 \pm 3.244$  & $3.785 \pm 3.213$ \\  
+50    & $3.827 \pm 3.249$  & $3.793 \pm 3.213$ \\
+150   & $3.826 \pm 3.254$  & $3.754 \pm 3.192$ \\
+500   & $3.588 \pm 3.052$  & $3.488 \pm 2.961$ \\
+1000  & $3.370 \pm 2.862$  & $3.30  \pm 2.814$ \\
 \end{tabular}
-\label{table:vxslimits}
+\label{table:lg_xslimits}
 \end{table}
 
-\begin{table}[htb]
-\caption[Upper limits on DM cross section for axial-vector $m_M = 10$ \TeV]{Observed (expected) 90\%CL upper limits on the DM production cross section $\sigma$ for axial vector  mediator mass of 10 \TeV }
-\centering
-\begin{tabular}{cc}
-\hline\hline
-Mass DM [GeV] & $\sigma$ [pb] \\
-\hline
-1  & 3.782(3.211)  \\  
-\hline
-10  & 3.785(3.213) \\
-\hline
-50  & 3.793(3.213) \\
-\hline
-150  & 3.754(3.192)\\
-\hline
-500  & 3.488(2.961)\\
-\hline
-1000  & 3.30(2.814)\\
-\hline
-\end{tabular}
-\label{table:avxslimits}
-\end{table}
+%\begin{table}[ht]
+%\caption[Upper limits on DM cross sections for $m_M = 10$ \TeV]
+%{Observed (expected) 90\%CL upper limits on the DM production cross section $\sigma$ for vector mediator mass 10 TeV. }
+%\centering
+%\begin{tabular}{cc}
+%\hline\hline
+%Massi DM [GeV] & $\sigma$ [fb] \\
+%\hline
+%1  & 3.821(3.242)  \\  
+%\hline
+%10  & 3.820(3.244)  \\  
+%\hline
+%50  & 3.827(3.249) \\
+%\hline
+%150  & 3.826(3.254)\\
+%\hline 
+%500  & 3.588(3.052) \\
+%\hline
+%1000  & 3.370(2.862) \\
+%\hline
+%\end{tabular}
+%\label{table:vxslimits}
+%\end{table}
+%
+%\begin{table}[htb]
+%\caption[Upper limits on DM cross section for axial-vector $m_M = 10$ \TeV]{Observed (expected) 90\%CL upper limits on the DM production cross section $\sigma$ for axial vector  mediator mass of 10 \TeV }
+%\centering
+%\begin{tabular}{cc}
+%\hline\hline
+%Mass DM [GeV] & $\sigma$ [pb] \\
+%\hline
+%1  & 3.782(3.211)  \\  
+%\hline
+%10  & 3.785(3.213) \\
+%\hline
+%50  & 3.793(3.213) \\
+%\hline
+%150  & 3.754(3.192)\\
+%\hline
+%500  & 3.488(2.961)\\
+%\hline
+%1000  & 3.30(2.814)\\
+%\hline
+%\end{tabular}
+%\label{table:avxslimits}
+%\end{table}
 
 
 
@@ -534,13 +558,13 @@ black curves are the expected and observed exclusion contours. The uncertainty o
 expected upper limit includes the experimental uncertainties. For the simplified DM model
 considered, a mediator mass of up to 600~\GeV is excluded for $m_\chi <10$ \GeV.
 
-Exclusion contours in Figure~\ref{fig:2d} are also translated into the 
-$m_\chi$-$\sigma_{SI/SD}$ plane as shown in Figure~\ref{fig:cont} where $\sigma_{SI/SD}$ are the 
-spin-independent/dependent DM-nucleon scaterring cross sections~\cite{dmforum}. For 
-these contours, we use 90\% CL to do a direct comparison
-with the limits from the direct detection experiments~\cite{pico,pico1,lux1june}.
+%Exclusion contours in Figure~\ref{fig:2d} are also translated into the 
+%$m_\chi$-$\sigma_{SI/SD}$ plane as shown in Figure~\ref{fig:cont} where $\sigma_{SI/SD}$ are the 
+%spin-independent/dependent DM-nucleon scattering cross sections~\cite{dmforum}. For 
+%these contours, we use 90\% CL to do a direct comparison
+%with the limits from the direct detection experiments~\cite{pico,pico1,lux1june}.
 
-For DM EFT model with a contact interaction of type $\gamma\gamma\chi\overline{\chi}$, upper limits are placed on the production cross section, which are then translated into the lower limits on the suppression scale $\Lambda$. The 95\% CL observed and expected lower limits on $\Lambda$ as a function of dark matter mass $m_{\chi}$ are shown in Figure~\ref{fig:DMEWKlimits}. Values of $\Lambda$ up to 542\GeV are excluded at $95\%$ CL.
+For DM EFT model with a contact interaction of type $\gamma\gamma\chi\overline{\chi}$, upper limits are placed on the production cross section, which are then translated into the lower limits on the suppression scale $\Lambda$. The 95\% CL observed and expected lower limits on $\Lambda$ as a function of dark matter mass $m_{\chi}$ are shown in Figure~\ref{fig:DMEWKlimits}. Values of $\Lambda$ up to 540 \GeV are excluded at $95\%$ CL.
 
 \begin{figure}[htb]
 \caption[Exclusion plots in $m_{\chi}-m_M$ plane]{95\% CL upper limits on $\mu$= $\sigma$/$\sigma_{Th}$ in the $m_{\chi}$-$M_{M}$ plane for vector and axial-vector mediator, assuming couplings $g_{q}$ =0.25 and $g_{\chi}$ =1.
@@ -557,13 +581,13 @@ The dotted black contours around the observed limit and the
 \end{center}
 \end{figure}
 
-\begin{figure}[htb!]
-\caption[Exclusion limits on DM-nucleon cross section]{The 90\% CL exclusion limits on the $\chi$-nucleon scattering cross section in a simplified model of dark matter production involving a vector and axial-vector operator as a function of the dark matter mass $m_{\chi}$.}\label{fig:cont}
-\begin{center}
-\includegraphics[width=0.4\textwidth]{pdfs/lgxc/fromb/SI.pdf}
-\includegraphics[width=0.4\textwidth]{pdfs/lgxc/fromb/SD.pdf}
-\end{center}
-\end{figure}
+%\begin{figure}[htb!]
+%\caption[Exclusion limits on DM-nucleon cross section]{The 90\% CL exclusion limits on the $\chi$-nucleon scattering cross section in a simplified model of dark matter production involving a vector and axial-vector operator as a function of the dark matter mass $m_{\chi}$.}\label{fig:cont}
+%\begin{center}
+%\includegraphics[width=0.4\textwidth]{pdfs/lgxc/fromb/SI.pdf}
+%\includegraphics[width=0.4\textwidth]{pdfs/lgxc/fromb/SD.pdf}
+%\end{center}
+%\end{figure}
 
 \begin{figure}[htb!]
 \caption[Expected lower limit for EFT cutoff parameter $\Lambda$]{(a) The 95\% CL observed and expected lower limits on $\Lambda$ for a dimension-7 operator EFT model with a contact interaction of type $\gamma\gamma\chi\overline{\chi}$ as a function of dark matter mass $m_{\chi}$.}\label{fig:DMEWKlimits}

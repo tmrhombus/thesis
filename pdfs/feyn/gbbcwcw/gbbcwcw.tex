@@ -1,0 +1,28 @@
+\documentclass{standalone}
+\usepackage{feynmp}
+
+% Needed to interpret generated *.1, *.2 etc. as ps files.
+\DeclareGraphicsRule{*}{mps}{*}{} 
+\unitlength=0.9mm
+
+\begin{document}
+\begin{fmffile}{gbbcwcwGraph} % this is the name for mpost
+\fmfframe(10,10)(10,10){ % sizes of offset
+\begin{fmfgraph*}(80,40)
+ \fmfset{arrow_len}{2mm}
+ \fmfset{zigzag_len}{4mm}
+ \fmfset{curly_len}{4mm}
+ \fmfset{arrow_ang}{25}
+  \fmfleft{i1} \fmflabel{$g$}{i1}
+  \fmfright{o1,o2,o3,o4}
+  \fmf{gluon}{i1,v1}
+  \fmf{fermion,label=$c$,lab.side=left}{o1,vv1}
+  \fmf{fermion,label=$b$,lab.side=left}{vv1,v1,vv2}
+  \fmf{fermion,label=$c$,lab.side=left}{vv2,o4}
+  \fmffreeze
+  \fmf{zigzag,label=$W^-$,lab.side=left}{o3,vv2}
+  \fmf{zigzag,label=$W^+$,lab.side=right}{o2,vv1}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}

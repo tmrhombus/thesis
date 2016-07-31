@@ -1,0 +1,28 @@
+\documentclass{standalone}
+\usepackage{feynmp}
+
+% Needed to interpret generated *.1, *.2 etc. as ps files.
+\DeclareGraphicsRule{*}{mps}{*}{} 
+\unitlength=0.9mm
+
+\begin{document}
+\begin{fmffile}{sttGraph} % this is the name for mpost
+\fmfframe(10,10)(10,10){ % sizes of offset
+%\fmfframe(10,13)(10,9){ % sizes of offset
+%\begin{fmfgraph*}(40,10)
+\begin{fmfgraph*}(40,20)
+ \fmfset{arrow_len}{2mm}
+ \fmfset{zigzag_len}{4mm}
+ \fmfset{curly_len}{4mm}
+  \fmfleft{i1,i2} \fmflabel{$u$}{i1} \fmflabel{$b$}{i2}
+  \fmfright{o1,o2,o3} \fmflabel{$d$}{o1} \fmflabel{$b$}{o2}  \fmflabel{$W$}{o3}
+  \fmf{fermion}{o1,v1,i1}
+  \fmf{zigzag,label=$W$}{v1,v2}
+  \fmf{fermion}{o2,vv2}
+  \fmf{fermion,label=$t$}{vv2,v2}
+  \fmf{fermion}{v2,i2}
+  \fmf{zigzag}{o3,vv2}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}

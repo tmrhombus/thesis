@@ -430,46 +430,46 @@
 %   \@tableof{LIST OF TABLES}{Table}{lotpage}{lot}
 %   {\protect\addcontentsline{toc}{chapter}{LIST OF TABLES}}}
 
-%=============================================================================
-% BIBLIOGRAPHY
-%=============================================================================
-% The thebibliography environment executes the following commands:
-%
-%  o start a new 'chapter' with BIBLIOGRAPHY as the heading
-%  o produce a separator page for the bibliography
-%
-%  \def\newblock{\hskip .11em plus .33em minus -.07em} --
-%      Defines the `closed' format, where the blocks (major units of
-%      information) of an entry run together.
-%
-%  \sloppy  -- Used because it's rather hard to do line breaks in
-%      bibliographies,
-%
-%  \sfcode`\.=1000\relax --
-%      Causes a `.' (period) not to produce an end-of-sentence space.
-%=============================================================================
-% \altbibtitle
-%   The default title for the References chapter is ``LIST OF REFERENCES''
-%   Since some people prefer ``BIBLIOGRAPHY'', the command
-%   \altbibtitle has been added to change the chapter title.
-%   This command does nothing more than change REFERENCES to BIBLIOGRAPHY
-%============================================================================
-\def\@bibchaptitle{Bibliography}
-\def\altbibtitle{\def\@bibchaptitle{Bibliography}}
-\def\thebibliography#1{
-  %\separatorpage{\@bibchaptitle}
-  \global\@bibpresenttrue
-  \chapter*{\@bibchaptitle\markboth{\@bibchaptitle}{\@bibchaptitle}}
-  \addcontentsline{toc}{chapter}{\@bibchaptitle}
-  \vspace{0.375in}    % added to match 4 line requirement
-  \interlinepenalty=10000 % added to prevent breaking of bib entries
-  \singlespace\list
-  {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
-    \advance\leftmargin\labelsep \usecounter{enumi}}
-  \def\newblock{\hskip .11em plus .33em minus -.07em}
-  \sloppy
-  \sfcode`\.=1000\relax}
-\let\endthebibliography=\endlist
+%%=============================================================================
+%% BIBLIOGRAPHY
+%%=============================================================================
+%% The thebibliography environment executes the following commands:
+%%
+%%  o start a new 'chapter' with BIBLIOGRAPHY as the heading
+%%  o produce a separator page for the bibliography
+%%
+%%  \def\newblock{\hskip .11em plus .33em minus -.07em} --
+%%      Defines the `closed' format, where the blocks (major units of
+%%      information) of an entry run together.
+%%
+%%  \sloppy  -- Used because it's rather hard to do line breaks in
+%%      bibliographies,
+%%
+%%  \sfcode`\.=1000\relax --
+%%      Causes a `.' (period) not to produce an end-of-sentence space.
+%%=============================================================================
+%% \altbibtitle
+%%   The default title for the References chapter is ``LIST OF REFERENCES''
+%%   Since some people prefer ``BIBLIOGRAPHY'', the command
+%%   \altbibtitle has been added to change the chapter title.
+%%   This command does nothing more than change REFERENCES to BIBLIOGRAPHY
+%%============================================================================
+%\def\@bibchaptitle{Bibliography}
+%\def\altbibtitle{\def\@bibchaptitle{Bibliography}}
+%\def\thebibliography#1{
+%  %\separatorpage{\@bibchaptitle}
+%  \global\@bibpresenttrue
+%  \chapter*{\@bibchaptitle\markboth{\@bibchaptitle}{\@bibchaptitle}}
+%  \addcontentsline{toc}{chapter}{\@bibchaptitle}
+%  \vspace{0.375in}    % added to match 4 line requirement
+%  \interlinepenalty=10000 % added to prevent breaking of bib entries
+%  \singlespace\list
+%  {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+%    \advance\leftmargin\labelsep \usecounter{enumi}}
+%  \def\newblock{\hskip .11em plus .33em minus -.07em}
+%  \sloppy
+%  \sfcode`\.=1000\relax}
+%\let\endthebibliography=\endlist
 
 
 

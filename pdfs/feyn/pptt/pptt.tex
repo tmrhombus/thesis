@@ -1,0 +1,40 @@
+\documentclass{standalone}
+\usepackage{feynmp}
+
+% Needed to interpret generated *.1, *.2 etc. as ps files.
+\DeclareGraphicsRule{*}{mps}{*}{} 
+\unitlength=0.9mm
+
+\begin{document}
+\begin{fmffile}{ppttGraph} % this is the name for mpost
+\fmfframe(10,10)(10,10){ % sizes of offset
+%\fmfframe(10,13)(10,9){ % sizes of offset
+%\begin{fmfgraph*}(40,10)
+\begin{fmfgraph*}(50,40)
+ \fmfset{arrow_len}{2mm}
+ \fmfset{zigzag_len}{4mm}
+ \fmfset{curly_len}{4mm}
+  \fmfleft{i1,i2}
+   \fmflabel{$q$}{i1}
+   \fmflabel{$q$}{i2}
+  \fmfright{o1,o2,o3,o4,o5,o6}
+   \fmflabel{$\ell$}{o1}
+   \fmflabel{$\nu$}{o2}
+   \fmflabel{$b$}{o3}
+   \fmflabel{$b$}{o4}
+   \fmflabel{$q',\nu$}{o5}
+   \fmflabel{$q'',\ell$}{o6}
+  \fmf{fermion}{i1,v1,i2}
+  \fmf{gluon,label=$g$,lab.dist=0.1h}{v1,vv1}
+  \fmf{fermion}{o3,vvv1}
+  \fmf{fermion,label=$t$,lab.side=left}{vvv1,vv1,vvv2}
+  \fmf{fermion}{vvv2,o4}
+ \fmffreeze
+  \fmf{zigzag,label=$W$,lab.size=left}{vvvv1,vvv1}
+  \fmf{fermion}{o2,vvvv1,o1}
+  \fmf{zigzag,label=$W$,lab.size=left}{vvvv2,vvv2}
+  \fmf{fermion}{o6,vvvv2,o5}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}

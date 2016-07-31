@@ -1,0 +1,29 @@
+\documentclass{standalone}
+\usepackage{feynmp}
+\usepackage{amssymb,amsmath}
+
+
+% Needed to interpret generated *.1, *.2 etc. as ps files.
+\DeclareGraphicsRule{*}{mps}{*}{} 
+\unitlength=0.9mm
+
+\begin{document}
+\begin{fmffile}{zffGraph} % this is the name for mpost
+\fmfframe(10,10)(10,10){ % sizes of offset
+\begin{fmfgraph*}(20,20)
+ \fmfset{arrow_len}{2mm}
+ \fmfset{zigzag_len}{4mm}
+ \fmfset{curly_len}{4mm}
+ \fmfset{arrow_ang}{25}
+  \fmfleft{i1} \fmflabel{$\boldsymbol{Z}$}{i1}
+  \fmfright{o1,o2} \fmflabel{$\boldsymbol{f}$}{o1} \fmflabel{$\boldsymbol{f}$}{o2}
+  \fmf{zigzag}{i1,v1}
+  \fmf{fermion}{o2,v1}
+  \fmf{fermion}{v1,o1}
+  %\fmf{zigzag,label=$\boldsymbol{Z}$}{i1,v1}
+  %\fmf{fermion,label=$\boldsymbol{f}$}{o2,v1}
+  %\fmf{fermion,label=$\boldsymbol{f}$}{v1,o1}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}

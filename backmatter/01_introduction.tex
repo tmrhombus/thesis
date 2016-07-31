@@ -15,17 +15,41 @@
   at the European Center for Nuclear Research (CERN).
  This thesis presents analyses of data taken
   with the Compact Muon Solenoid (CMS) detector
-  using proton-proton collisions provided by the LHC
+  using proton-proton ($pp$) collisions provided by the LHC
   during its operation in 2012 and 2015.
- Using the 2012 data, a measurement
-  of the production cross section for
-  the standard model (SM) process
-  \ppwbblnbb is performed,
-  where $\ell$ is an electron or a muon.
- Using the 2015 data, the monophoton signature
-  is examined in the context of the SM
-  process \ppzgnng and as a search for
-  evidence of dark matter (DM).
+
+ Using the 2012 data, a measurement of the
+  production rate for the 
+  standard model (SM) process \ppwbblnbb
+  is performed. 
+ In this SM process the colliding protons ($p$) create a
+  $W$ boson that mediates charged weak interaction,
+  accompanied by a $b$
+  quark-anti-quark pair. 
+ The $W$ boson promptly decays to an an electron
+  or a muon ($\ell$), 
+  accompanied by its neutrino ($\nu_\ell$) partner
+  that disappears without leaving
+  a trace in the detector.
+
+ The other analysis is a Dark Matter (DM)
+  search looking for a monophoton signature.
+ Using the 2015 data,
+  the monophoton signature is examined in the context
+  of the SM process \ppzgnng  and as a search for evidence of
+  DM production.
+ In the SM process, colliding
+  protons create a $Z$ boson which mediates
+  neutral weak interactions much
+  like the photon ($\gamma$), which mediates the
+  electromagnetic interaction.  
+ The $Z$ boson decays to a neutrino pair
+  which disappears without a trace in
+  the detector, producing a monophoton signature.
+ Evidence for excessive production of such monophoton
+  events constitutes evidence for DM,
+  which is also expected to disappear without
+  leaving a trace in the detector.
 
 \section{The Standard Model}
 \subsection{Standard Model Particles}
@@ -169,7 +193,7 @@ g_W =  \frac{e}{\sqrt{2} \sin \theta_W}
   and gauge bosons in the SM,
   diagrams with the appropriate initial and final
   state particles are constructed from the 
-  vertices illustrated in Figure~\ref{fig:smcouplings}.
+  vertices illustrated in Table~\ref{fig:smcouplings}.
  External lines correspond to real particles
   which are observed in the final state
   and are on-shell.
@@ -183,15 +207,47 @@ g_W =  \frac{e}{\sqrt{2} \sin \theta_W}
   correct initial and final states.
 
 %%%%%%%%%%%%%
-\begin{figure}[!htb]
- \center
+\begin{table}[!htb]
  \caption[Illustrations of SM couplings]{
-  The couplings for the SM gauge interactions.
+  The couplings for the SM particles interactions.
  } 
- \includegraphics[width=0.6\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/feyn/Standard_Model_Feynman_Diagram_Vertices.png}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{C{0.2\textwidth} C{0.2\textwidth} C{0.2\textwidth} C{0.2\textwidth} C{0.2\textwidth}}
+ \includegraphics[width=0.2\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/feyn/vertices/zff/zff.pdf} &
+ \includegraphics[width=0.2\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/feyn/vertices/pqq/pqq.pdf} &
+ \includegraphics[width=0.2\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/feyn/vertices/gqq/gqq.pdf} &
+ \includegraphics[width=0.2\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/feyn/vertices/ggg/ggg.pdf} &
+ \includegraphics[width=0.2\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/feyn/vertices/gggg/gggg.pdf} \\
+$f$ is any fermion &
+$Q$ is electrically charged &
+$q$ is any quark &
+$g$ is any gluon & {}  \\  
+ \includegraphics[width=0.2\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/feyn/vertices/hmm/hmm.pdf} &
+ \includegraphics[width=0.2\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/feyn/vertices/xww/xww.pdf} &
+ \includegraphics[width=0.2\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/feyn/vertices/xyww/xyww.pdf} &
+ \includegraphics[width=0.2\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/feyn/vertices/wud/wud.pdf} &
+ \includegraphics[width=0.2\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/feyn/vertices/wln/wln.pdf} \\
+$m$ is any massive particle &
+$X$ is $Z$ or $\gamma$ &
+$X$ and $Y$ are EW bosons such that charge is conserved  &
+$u$ is an up-type quark and $d$ is a down-type quark &
+$\ell$ is a lepton and $\nu$ is the corresponding neutrino \\
+\end{tabular}
+}
     \label{fig:smcouplings}
-\end{figure}
+\end{table}
 %%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%
+%\begin{figure}[!htb]
+% \center
+% \caption[Illustrations of SM couplings]{
+%  The couplings for the SM interactions.
+% } 
+% \includegraphics[width=0.6\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/feyn/Standard_Model_Feynman_Diagram_Vertices.png}
+%    \label{fig:smcouplings}
+%\end{figure}
+%%%%%%%%%%%%%%
 
  Renormalization is necessary to account
   for corrections to the tree-level propagators
@@ -203,7 +259,9 @@ g_W =  \frac{e}{\sqrt{2} \sin \theta_W}
   are illustrated in Figure~\ref{fig:oneloopfeyn}.
  Because these diagrams contain the next fewest
   number of possible vertices above LO,
-  they are termed next-to-LO (NLO).
+  they are termed next-to-LO (NLO),
+  and some present calculations can be 
+  performed at next-to-NLO (NNLO).
  Renormalization is accomplished by introducing an energy scale,
   and assuming that the couplings are small compared 
   this this scale. 
@@ -211,8 +269,6 @@ g_W =  \frac{e}{\sqrt{2} \sin \theta_W}
   functions of energy 
   and are quoted at a particular renormalization scale,
   $\mu_R$.
- Renormalization works 
- Next-to-NLO 
  
  %% Determining if a theory is renormalizable
   % Srednicki 129, 18
@@ -261,7 +317,7 @@ g_W =  \frac{e}{\sqrt{2} \sin \theta_W}
   d\mathrm{LIPS}_{n'}(k_1 + k_2)
 \end{equation}
   where the scattering matrix element, $\mathcal{T}$,
-  is defined using Equation \ref{eq:lszformula}, as 
+  is defined as %using Equation \ref{eq:lszformula}, as 
 \begin{equation}\label{eq:matrixelement}
 \langle f | i \rangle = (2\pi)^4\delta^4\left(\sum k_{\mathrm{in}}-\sum k_{\mathrm{out}}\right)
   i \mathcal{T}
@@ -338,51 +394,73 @@ g_W =  \frac{e}{\sqrt{2} \sin \theta_W}
   for the fundamental particles
   are given in Table \ref{tab:lifetimes}.
 
- At CMS, the heaviest quark and the heaviest
-  lepton both decay before reaching
-  the detector volume.
- This makes $b$ quarks the heaviest
-  fundamental particles which can be seen
-  to decay inside the detector,
-  and therefore an object of interest.
- Additionally, their heavy mass means that they
+ At CMS, the heaviest quarks and the heaviest
+  lepton decay before reaching
+  the detector volume,
+  but by tracing the trajectories of
+  the decay products backwards,
+  the location of the decay
+  can be determined.
+ The heaviest fundamental particles
+  which can be observed to decay
+  in a location that is spatially 
+  separated from the initial  $pp$ 
+  collision are $b$ quarks.
+ Their heavy mass means that they
   couple strongly with the Higgs boson
   which still has many properties that
-  are under investigation.
- The $W$ and $Z$ bosons are both so 
+  are under investigation, making
+  $b$ quarks an interesting object of study.
+ The $W$, $Z$ and Higgs bosons are each so 
   massive that they decay before reaching
   the innermost layers of the detector
   and are often identified by their decay products
-  pointing back to a common vertex.
+  pointing back to the same common vertex 
+  as the initial $pp$ collision.
  
 %%%% Table SU(2) Representations
 \begin{table}[tb]
 \caption[Fundamental particle decay channels and rates]
 {
  Below are listed the decay channels and 
-  rates for each of the unstable
+  rates for unstable
   fundamental particles.
  At CMS, with the detection apparatus
   located a finite distance away from the
   interaction vertex, particles such as the
   $W$, $Z$ and Higgs bosons,
-  as well as the $t$ and $tau$, decay before
-  reaching the first layer of the detector.
+  as well as the $t$ and $tau$,
+  decay too quickly to be resolved as
+  having decayed in a different location
+  than the initial $pp$ collision.
+ Particles such as the $b$ and $c$,
+  can be observed as having
+  travelled a finite distance away from the
+  initial $pp$ collision before decaying.
+ The $s$ quark can decay on time scales
+  of $10^{-23}-10^{-10}$ s, depending 
+  on the hadron it is bound in and the
+  mode of decay,
+  and the muon typically decays after
+  having passed through the entire detector.
 }
 \label{tab:lifetimes}
 \begin{center}
 \resizebox{\columnwidth}{!}{
 \begin{tabular}{r|l|l|l}
-Particle & Primary decay modes(s) & Total rest-frame $d\Gamma$ & Typical decay location \\
+Particle & Primary decay mode & Total rest-frame $d\Gamma$ & Vertex Resolved \\
 \hline\hline
-$W$ & $W\rightarrow \ell\nu$ & X & Before reaching CMS \\
-$Z$ & $Z\rightarrow f\overline{f}$ (for $2M_f < M_Z$) & X & Before reaching CMS \\
-$\tau$ & $\tau\rightarrow W \nu_\tau$ & X & Before reaching CMS \\
-$\mu$  & $\mu\rightarrow W \nu_\mu$ & X & After leaving CMS \\
-$t$    & $t\rightarrow W^+b$ & X & Before reaching CMS \\
-$b$    & $b\rightarrow W^-c$ & X & Inside CMS \\
-$c$    & $c\rightarrow W^+s$ & X & Inside CMS \\
-$s$    & $s\rightarrow W^-u$ & X & Inside CMS
+$W$    & $W\rightarrow \ell\nu$       & 2.1 \GeV    & No \\
+$Z$    & $Z\rightarrow f\overline{f}$ & 2.5  \GeV   & No \\
+$H$    & $H\rightarrow b\overline{b}$ & 6.1  \MeV   & No \\
+\hline
+$\tau$ & $\tau\rightarrow W \nu_\tau$ & 2.2 keV     & No \\
+$\mu$  & $\mu\rightarrow W \nu_\mu$   & 300 peV     & Yes \\
+\hline
+$t$    & $t\rightarrow W^+b$          & 1.4 \GeV    & No \\
+$b$    & $b\rightarrow W^-c$          & 500 eV      & Yes \\
+$c$    & $c\rightarrow W^+s$          & 2 meV       & Yes \\
+$s$    & $s\rightarrow W^-u$          & $\mu$eV-MeV & Yes
 \end{tabular}
 }
 \end{center}
@@ -465,7 +543,8 @@ $s$    & $s\rightarrow W^-u$ & X & Inside CMS
   all other fundamental SM particles have been
   directly  observed  at CERN. 
 
-\section{Previous \wbb Measurements}
+\section[Previous \wbb Measurements]
+{Previous $\boldsymbol{\wbb}$ Measurements}
 
 The production of
  \w bosons
@@ -484,6 +563,9 @@ Neither of the experiments at the Tevatron
  but both published results on the 
  process \ppbarwbjlnbj where $j$ signifies
  any jets.
+Here, and throughout the remainder of this thesis,
+ leptons, $\ell$, are taken to mean only
+ electrons or muons.
 The CDF Collaboration observed a cross section
  that was a factor of two higher than the best
  NLO prediction available at the time, and the 
@@ -620,13 +702,37 @@ The analysis presented in this
 
 \subsection{Previous DM Searches}
 
-A search for particle DM~\cite{Khachatryan:2014rwa}
+A search for particle DM in the monophoton channel~\cite{Khachatryan:2014rwa}
   used $19.6$~\fbinv of $pp$ data collected in 2012 by the CMS Collaboration at
- \s 8 \TeV, but no evidence was found and a new upper limit
+ \s8 \TeV, but no evidence was found and a new upper limit
  for the DM cross section was set.
 A similar search was performed by the ATLAS experiment~\cite{Aaboud:2016uro}
  using $3.2$~\fbinv of $pp$ collision data at \s 13 \TeV
- collected in 2015, but again  no evidence for new physics was found. 
+ collected in 2015, but again no evidence for new physics was found. 
 This imposed limits on the possible masses DM particles
  and the mediator mass as $m_\chi > 150$ \GeV or
  $m_M > 710$ \GeV.
+Similar searches have also been performed looking for
+ particle DM produced in conjunction with ISR radiation of
+ particles other than photons, in particular jets~\cite{bib:monojet}
+ and leptons~\cite{Khachatryan:2014tva}.
+Both of these searches explore a range of masses for $\chi$ and $M$.
+In the EFT interpretation, both the monojet and monolepton
+ searches give similar results, concluding that for $m_\chi<100$ \GeV
+ the suppression scale must obey $\Lambda > 1$ \TeV.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

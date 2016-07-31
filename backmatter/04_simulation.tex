@@ -1,5 +1,6 @@
 
-\chapter{Event Simulation and Reconstruction}\label{sec:simulation}
+\chapter{Simulation and Reconstruction}\label{sec:simulation}
+%\chapter{Event Simulation and Reconstruction}\label{sec:simulation}
 
 %%%%%%%%%%%%%
 \section{Simulation of Events}
@@ -56,11 +57,15 @@
   are shown in Figure~\ref{fig:cteqpdfs}.
  Weighted with probabilities from the PDF set
   and summed over,
- MEs are calculated explicitly from Feynman
+  MEs are calculated explicitly from Feynman
   diagrams which have initial state particles
   found in the PDF and the desired
   final state. 
- 
+ If only the first four lightest quarks are
+  included in the PDF, the PDF is considered
+  four-flavor (4F), and if the $b$ quark
+  is also considered directly in the PDF, 
+  then it is five-flavor (5F).
 
 %%%%%%%%%%%%%
 \begin{figure}[htb]
@@ -88,7 +93,7 @@
   and gluon splitting.
  The effects of radiation and parton showering are simulated
   using a Markov process in which 
-  vertices iteritively are added to partons
+  vertices iteratively are added to partons
   with probabilities based on the
   coupling strengths, energies of the participants
   and the generation of random numbers.
@@ -155,11 +160,13 @@ They either calculate MEs for hard
   from the input Equation~\ref{eq:dsigma}.
    
  A Monte Carlo for FeMtobarn (\MCFM)
-  also uses \VEGAS to perform phase space
-  integragions, but does so at NLO 
-  instead of LO.
+  and Fully Exclusive W,Z Production (\FEWZ)
+  also use \VEGAS to perform phase space
+  integrations, but \MCFM does so at NLO 
+  and \FEWZ at NNLO.
  With a much larger phase space to 
-  integrate over, \MCFM performs optimizations
+  integrate over than \MADGRAPH,
+  \MCFM performs optimizations
   on the integration and produces weighted events.
  With weighted events, an estimation of
   a cross section to NLO accuracy can be made,
@@ -169,31 +176,45 @@ They either calculate MEs for hard
  Estimations made by \MCFM thus need to 
   be corrected for hadronization effects
   before being compared with observed cross sections.
+% Predictions made with \FEWZ rely on 
+%  numerical methods to cancel 
+
 
 \subsubsection{Showering and NLO Corrections}
- Pythia performs hadronization using the
+ Radiation and hadronization are modeled
+  with \PYTHIA, which uses the
   Lund string model in which quarks are
   confined to the ends of strings and
   gluons are represented as kinks on that string.
  As quarks separate, the string breaks and
   creates a $q\overline{q}$ pair, 
   thus building confinement directly into the model.
- The underlying event is modeled in Pythia
+ Jets can thus either appear in the final state
+  as a result of the ME calculation or as
+  radiation and to avoid double counting, 
+  the \ktmlm matching scheme is used.
+ The underlying event is modeled in \PYTHIA
   as a set of $2\rightarrow 2$ processes
   which are correlated with each other via the
-  color connections present in the proton.
-
-
-  and the set of parameters used by Pythia
-  to perform calculations is referred to as 
+  color connections present in the proton,
+  and the set of parameters used by \PYTHIA
+  to perform these calculations is referred to as 
   the tune.
- 
- % \subsection{\MADGRAPH}
- % \subsection{Pythia}
- % \subsection{MCFM}
- % \subsection{Powheg}
- % \subsection{FEWZ}
- % \subsection{aMC@NLO}
+The most recent \textsc{\PYTHIA} Z2* tune
+ is derived from the Z1 tune \cite {Field:2010bc},
+ which uses the CTEQ5L parton distribution set,
+ whereas Z2* adopts CTEQ6L \cite {ref:CTEQ66}.
+
+ Corrections due to NLO effects are
+  handled by the Positive Weight 
+  Hardest Emission Generator (\POWHEG). 
+ Powheg replaces the hardest jet in the event 
+  with the NLO prediction.
+ A similar technique is used by \AMCNLO,
+  which was modified to interface directly
+  with \MADGRAPH to produce fully consistent 
+  NLO predictions for use on the 2015 LHC dataset.
+ The combined generator is called \MGAMC.
 
 \subsection{Detector Simulation}
 
@@ -233,7 +254,7 @@ They either calculate MEs for hard
   particles which arise from $pp$ collisions 
   at the LHC can be individually identified
   and reconstructed using the combined
-  information from the entirity of CMS.
+  information from the entirety of CMS.
  The associated global event description
   from this particle-flow (PF) reconstruction
   provides excellent performance for
@@ -258,7 +279,7 @@ They either calculate MEs for hard
   means of identifying the the location of
   the primary interaction.
 
- Tracks are identified via an iteritive process. 
+ Tracks are identified via an iterative process. 
  The first tracks to be reconstructed
   are those which pass strict seeding
   criteria, designed to have a moderate
@@ -324,7 +345,7 @@ They either calculate MEs for hard
   to the fitting of tracks.
  In the CMS detector, 
   bremsstrahlung from electrons results in the
-  emmision of photons in an extended strip
+  emission of photons in an extended strip
   in the $\phi$ direction and electron
   superclusters (SCs) are made by 
   including the energy deposits from 
@@ -358,7 +379,7 @@ They either calculate MEs for hard
   matched station hit is less than four, where
   pull is defined as the distance between
   the track and the station hit divided by 
-  the uncertainties on both measured quanties.
+  the uncertainties on both measured quantities.
  Tracker muons are built from the inside of the
   detector towards the outside, and 
   standalone muons are built in the other direction.
@@ -404,7 +425,7 @@ The last term in the numerator, $\pt^{\mathrm{PU}}$ ,
  and is based on the scalar sum of transverse momenta of charged particles
  not associated with the primary vertex that are within the isolation cone.
 
-\subsection{Photon ID and Reconstruction}
+\subsection{Photon ID and Reconstruction}\label{sec:photonreco}
 
  Photons are reconstructed using the same ECAL
   clustering algorithms as are used for electrons.
@@ -421,7 +442,7 @@ The last term in the numerator, $\pt^{\mathrm{PU}}$ ,
   and photons tend to have narrow deposits.
 
  In an ideal tracker, photons would not interact 
-  at all and objects that leave signarues
+  at all and objects that leave signatures
   similar to those of photons could be rejected
   through the rejection of tracks.
  However, some photons do convert to $e\overline{e}$
@@ -452,7 +473,7 @@ In calculating \mt, the \met is corrected for noise in the
  and corrections to limit the effects of
  pileup are also included \cite{CMS:8TeVMET}.
 
-\subsection{Jet ID and Secondary Vertices}\ref{sec:jetsvreco}
+\subsection{Jet ID and Secondary Vertices}\label{sec:jetsvreco}
  The reconstruction
   of jets is accomplished using the anti-$k_t$
   clustering algorithm on particles identified

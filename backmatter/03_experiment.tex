@@ -14,13 +14,13 @@ The LHC was designed to probe physics at the
 As measured in the CM frame
  of protons colliding inside CMS,
  the LHC operated at
- \s8 \TeV in 2012 and \s13 \TeV in 2015.
+ \s8~\TeV in 2012 and \s13~\TeV in 2015.
 The measurement of the \ppwbb cross section 
- is performed using 19.8 \fbinv of integrated luminosity
- collected at \s8 \TeV and 
+ is performed using 19.8~\fbinv of integrated luminosity
+ collected at \s8~\TeV and 
  the measurement of the \ppzgnng cross section
  and the extensions to set limits on DM models 
- uses 2.3 \fbinv of data collected at \s13 \TeV. 
+ use 2.3~\fbinv of data collected at \s13~\TeV. 
 
 \section{The Large Hadron Collider}
 The LHC is a single-ring, double-bore 
@@ -92,11 +92,11 @@ The dipole contains two beam pipes which are
  each surrounded by superconducting coils
  of Niobium Titanium (NbTi)
  which carry oscillating currents when in operation.
-These constitute RF cavities
- operating at 400 MHz and having the 
- ability to circulate proton
+The LHC contains RF cavities
+ operating at 400 MHz which 
+ circulate proton
  bunches in opposing directions 
- between the two beam pipes
+ in the two beam pipes
  with a spacing of 25 ns between bunches.
 The magnets are capable of reaching 
  a strength of over 8 T, a constraint
@@ -104,6 +104,37 @@ The magnets are capable of reaching
  of the accelerator and the radius of the
  existing LEP tunnels
  in which the LHC was built.  
+%The Lorentz-invariant magnetic force on a
+%  particle of charge $q$, moving at
+%  velocity $\mathbf{v}$ in a 
+%  magnetic field $\mathbf{B}$ is
+%\begin{equation}\label{eq:bforce}
+% \mathbf{F_B}=q\mathbf{v}\times\mathbf{B}
+%\end{equation}
+% and the relativistic version of Newton's second
+% law states
+%\begin{equation}
+% \mathbf{F} = \frac{d\mathbf{p}}{dt} =
+%  \frac{d}{dt}\left ( \gamma m_0 \mathbf{v}  \right )
+%\end{equation}
+% where $\gamma$ is the relativistic correction
+% factor and $m_0$ is the rest mass of the particle.
+%These can be solved to find that the magnetic field
+% required to hold a proton in planar
+% circular motion as in the LHC is
+%\begin{equation}
+% \mathbf{B}=\frac{p}{qR}
+%\end{equation}
+% where $R = 4.3$ km.
+At individual beam energies of 4 and 6.5 TeV
+ in 2012 and 2015 respectively,
+ the rest mass of the proton constitutes
+ a negligible fraction of the proton momentum
+ and the minimum magnetic field required by the
+ magnets is 3 and 5 Tesla respectively.
+In practice, due to the noncircular
+ geometry of the LHC, this field is closer
+ to 8 T.
  
 \begin{figure}[tb]
 \caption[The LHC dipole]{
@@ -120,34 +151,6 @@ The magnets are capable of reaching
 \label{fig:lhc_dipole}
 \end{figure}
 
-The Lorentz-invariant magnetic force on a
-  particle of charge $q$, moving at
-  velocity $\mathbf{v}$ in a 
-  magnetic field $\mathbf{B}$ is
-\begin{equation}\label{eq:bforce}
- \mathbf{F_B}=q\mathbf{v}\times\mathbf{B}
-\end{equation}
- and the relativistic version of Newton's second
- law states
-\begin{equation}
- \mathbf{F} = \frac{d\mathbf{p}}{dt} =
-  \frac{d}{dt}\left ( \gamma m_0 \mathbf{v}  \right )
-\end{equation}
- where $\gamma$ is the relativistic correction
- factor and $m_0$ is the rest mass of the particle.
-These can be solved to find that the magnetic field
- required to hold a proton in planar
- circular motion as in the LHC is
-\begin{equation}
- \mathbf{B}=\frac{p}{qR}
-\end{equation}
- where $R = 4.3$ km.
-At individual beam energies of 4 and 6.5 TeV
- in 2012 and 2015 respecyively,
- the rest mass of the proton constitutes
- a negligible fraction of the proton momentum
- and the minimum magnetic field required by the
- magnets is [todo - unit conversion].
 
 The rate at which a particular collision 
  process occurs
@@ -185,7 +188,7 @@ The CMS detector was built
  to collect particle collision data  exploiting the full physics reach
  of the LHC.
 The analysis of these data includes
- the discovery of the Higgs boson[REF]
+ the discovery of the Higgs boson~\cite{Chatrchyan:2012ufa,Aad:2012tfa}
  and high precision measurements of SM processes,
  as well as searches for physics beyond the standard model.
 To be able to perform such precision measurements,
@@ -266,7 +269,7 @@ For the calorimeters, "barrel" refers to the region of $|\eta| < 1.4442$,
 Instrumentation cables are run through the
  gap between the barrel and endcap,
  so this area has detecting components. 
-The HCAL forward region covers $3.0 < |\eta| < 5$ and
+The HCAL forward region (HF) covers $3.0 < |\eta| < 5$ and
  the tracker extends to $|\eta| < 2.5$.
 
  \subsection{Magnet}
@@ -304,12 +307,12 @@ The tracker has a length of 5.8 m and a radius of
 At the core of the tracker and closest to the beam line
  are three concentric cylindrical layers %4.4, 7.3, 10.2 cm 
  of hybrid pixel detector modules which are complemented
- by two discs of pixel modules on each end
+ by two discs of silicon pixel modules on each end
  and extend a to a distance of 10 cm from the beam line.
-[TODO - Explain - silicon]
 In total, the pixel component of the tracker covers
  an area of about 1 m$^2$ with 66 million pixels.
-External to the pixel detector are the tracker inner barrel and discs (TIB/TID)
+External to the pixel detector are the tracker
+ inner barrel and discs (TIB/TID)
  which are made from silicon strips and extend 
  out to a distance of 55 cm.
 There are four layers of strips in the TIB, with 3 discs at each end.
@@ -377,11 +380,9 @@ The ECAL provides stable and accurate
  measurements of energies over a range from 1 \GeV to 1 \TeV, 
  with the upper limit set by the energy at which electromagnetic showers
  penetrate through the ECAL into the HCAL.
-[REF][TODO - how much?]
 With time, after undergoing a heavy bombardment of high energy radiation,
  the \pbw crystals physically deteriorate and develop 
  nonuniform light transmission properties.
-[REF] 
 This is monitored and corrected for using a laser calibration system
  that probes for changes in crystal transparency.
  %during the running of the LHC.
@@ -430,9 +431,8 @@ Inside the barrel region there is an additional layer of the
  for energetic showers which start late in the HB.
 
 In the HB, HO and HE, light from particle showers
- [TODO - not exactly ..] 
  inside scintillators and collected by quartz fibers
- and then used as an estimate of the total energy of the shower.
+ is used as an estimate of the total energy of the shower.
 In the HF, this estimate is made using the Cherenkov 
  radiation from particles with energy above 190 \keV
  collected by the quartz fibers.
@@ -512,7 +512,7 @@ As muons move through the chamber, electrons
  but well known time delay. 
 The timing resolution of RPCs is on the order of 1 ns. 
 
-\begin{figure}[tb]
+\begin{figure}[htb]
 \caption[The CMS Muon System]{
  The CMS muon system uses DTs, RPCs,
   and CSCs to provide muon detection
@@ -528,5 +528,147 @@ The timing resolution of RPCs is on the order of 1 ns.
 \end{figure}
  
 \subsection{Trigger and Data Acquisition}
+In 2012, the LHC delivered proton-proton collisions
+ with a spacing of 50 \ns between collisions,
+ and in 2015 this spacing was reduced to 25 \ns.
+With these rates of collisions, 
+ it is not possible to permanently save
+ the complete set of information about 
+ energy deposits in the detector,
+ so the triggering system is of crucial importance.
+The purpose of the trigger system is to reduce the 
+ input rate of data flow down to a level at
+ which it can be recorded, specifically choosing
+ to keep those events which are most
+ likely to involve the physics processes being
+ studied.
+The trigger system is further divided into two parts.
 
+\subsubsection{Level-1 Trigger}
+The Level-1 trigger (L1T) 
+ is the first layer of processing,
+ and this processing is done using custom
+ hardware and software to reduce the rate 
+ of data flow down to 100 \kHz.
+A schematic of the L1T as used in 2012
+ is given in Figure~\ref{fig:l1trig}.
+ showing how the L1T is divided into three subsystems,
+ all of which receive trigger primitive (TP) data
+ from the calorimeters and muon system of raw information
+ on the energy and location of deposits in the
+ given detector subsystem.
+
+\begin{figure}[htb]
+\caption[The 2012 Level-1 Trigger]{
+Below is a diagram illustrating the flow
+ of information through the 2012 Level-1 Trigger.
+The L1T is composed of the RCT
+ the GMT, and the GT.
+The RCT and GMT both feed in to the GT
+ which makes the final trigger decisions
+ and passes this information off to the
+ DAQ for storage and to the TTC system
+ for feedback.
+ }
+\label{fig:l1trig}
+%\center
+\includegraphics[width=\textwidth]{pdfs/experiment/l1trigger.pdf}
+\end{figure}
+
+The Regional Calorimeter Trigger (RCT) computes
+ sums of energy from towers in the calorimeters
+ and uses this information to identify candidate
+ electrons, photons, tauons and jets.
+Electron and photon candidates are further classified as
+ isolated or not isolated based on the geometry
+ of energy deposits around the towers of highest energy.
+Objects are considered isolated if there is
+ a relatively low fraction of energy in nearby
+ towers.
+This information is sent to the Global Trigger (GT)
+ along with information about
+ regions in the detector without energy deposits 
+ to be used in coordination with the Global Muon Trigger (GMT)
+ for determining muon isolation.
+
+During the 2015
+ data-taking period, the RCT was run in parallel
+ with an upgraded calorimeter trigger (UCT),
+ as illustrated in Figure~\ref{fig:l1uct}.
+The UCT fulfilled the same functionality
+ as the RCT, but incorporated improvements
+ in both the hardware and software to accommodate
+ for the higher energies and rates of collisions 
+ that had been anticipated for the 2015 data-taking.
+These improvements included switching
+ the copper cables which connected the RCT to the 
+ calorimeters with optical fibers,
+ as well as the upgrading to modern
+ FPGAs which can transmit data at 10 GB/s.
+This allowed for more sophisticated 
+ identification and pileup subtraction algorithms.
+
+\begin{figure}[htb]
+\caption[The 2015 Upgrade Calorimeter Trigger]{
+Below is a diagram illustrating the flow
+ of information through the UCT in 2015.
+The RCT and the UCT were both run in parallel
+ in 2015.}
+\label{fig:l1uct}
+%\center
+\includegraphics[width=\textwidth]{pdfs/experiment/l1upgrade.pdf}
+\end{figure}
+
+The GMT uses information about the geometry and total energy 
+ of hits in the RPC, CSC and DT systems collectively %individually 
+ to find candidate muons.
+Because of the overlap between the muon subsystems,
+ information on reconstructed tracks is shared between the
+ CSCs and the DTs and the CSCs also take as input
+ information from the RPCs to disambiguate multiple
+ hits in the same chamber.
+
+All of this information is used, along with the
+ information about quiet regions in the calorimeters
+ sent from the RCT, to determine candidate isolated
+ and non-isolated muons.
+The RCT and GMT both feed in to the GT
+ which makes the final trigger decisions
+ on which events to investigate further
+ and passes this information off to the
+ Data Acquisition (DAQ) system for validation and storage
+ as well as to the Trigger Timing and Control (TTC) system
+ for real time feedback.
+
+%Information from the ECAL and HCAL were sent using 
+% copper wires in 2012 and one part of the upgrade
+% from 2012 to 2015 that I was involved with
+% was in making the switch to fiber optic transmissions 
+% for the ECAL. 
+
+\subsubsection{High Level Trigger}\label{sec:hlt}
+The High Level Trigger (HLT)
+ uses custom software and algorithms on
+ commercial hardware to further process the 
+ output from the GT and reduce the rate
+ of events being processed to 100 \Hz.
+Because the HLT has access to TPs from 
+ all of the detector subsystems on events
+ which have already passed the first selection 
+ stage of the L1T,
+ algorithms designed to mimic the final object
+ reconstruction described in Section~\ref{sec:reconstruction}
+ are used.
+These algorithms are optimized to compute
+ quantities which can be computed quickly,
+ and as events are rejected during the chain
+ of HLT processing, the processing on the
+ events is stopped so resources can be reallocated
+ quickly.
+In the \ppwbb analysis, the triggers used 
+ are based on finding an isolated muon (electron)
+ with $\pt > 24$ ($27$) \GeV.
+In the \pploneg analyses, localized clusters of energy deposits
+ are required to have $90\%$ of the total
+ energy deposited in the ECAL.
 

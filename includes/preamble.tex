@@ -14,10 +14,10 @@
 % You, the user, still hold the copyright to any document you produce
 % with this software (like your dissertation).
 
-%% You should use natbib
-\IfFileExists{natbib.sty}{%
-\usepackage{natbib}%
-}{}
+%%% You should use natbib
+%\IfFileExists{natbib.sty}{%
+%\usepackage{natbib}%
+%}{}
 
 %% You probably need appendix, if you want appendices
 \IfFileExists{appendix.sty}{%
@@ -31,6 +31,14 @@
 
 %% geometry package to help with margins on title page
 \usepackage{geometry}
+
+%% FloatBarrier
+\usepackage{placeins}
+
+% images in tables
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 %% List setup; the ``hanglist`` environment will allow you to have
 %% nicely-typeset enumerated lists (i.e. with the numbers hanging in
@@ -138,18 +146,32 @@
 %%% dissertation for web use later, you will certainly want to make
 %%% your own chapter and page styles.
 
+%\makechapterstyle{deposit}{%
+%  \renewcommand{\chapterheadstart}{}
+%  \renewcommand{\printchaptername}{}
+%  \renewcommand{\chapternamenum}{}
+%  \renewcommand{\printchapternum}{\parbox{2em}{\MakeLowercase{\Huge\scshape\thechapter{}}} }
+%  %\renewcommand{\printchapternum}{\parbox{2em}{\MakeLowercase{\Large\scshape\thechapter{}}} }
+%  \renewcommand{\afterchapternum}{}
+%  \renewcommand{\printchaptertitle}[1]{%
+%  \raggedright\Huge\scshape\MakeLowercase{##1}}
+%  %\raggedright\Large\scshape\MakeLowercase{##1}}
+%%  \renewcommand{\afterchaptertitle}{%
+%%  \vskip\onelineskip \hrule\vskip\onelineskip}
+%}
+
 \makechapterstyle{deposit}{%
   \renewcommand{\chapterheadstart}{}
   \renewcommand{\printchaptername}{}
   \renewcommand{\chapternamenum}{}
-  \renewcommand{\printchapternum}{\parbox{2em}{\MakeLowercase{\Huge\scshape\thechapter{}}} }
+  \renewcommand{\printchapternum}{{\HUGE \bfseries Chapter \thechapter{}} \newline }
   %\renewcommand{\printchapternum}{\parbox{2em}{\MakeLowercase{\Large\scshape\thechapter{}}} }
   \renewcommand{\afterchapternum}{}
   \renewcommand{\printchaptertitle}[1]{%
   \raggedright\Huge\scshape\MakeLowercase{##1}}
   %\raggedright\Large\scshape\MakeLowercase{##1}}
-  \renewcommand{\afterchaptertitle}{%
-  \vskip\onelineskip \hrule\vskip\onelineskip}
+%  \renewcommand{\afterchaptertitle}{%
+%  \vskip\onelineskip \hrule\vskip\onelineskip}
 }
 
 \makepagestyle{deposit}

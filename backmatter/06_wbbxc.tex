@@ -5,8 +5,8 @@ The first of the two processes examined
  in this thesis is the SM production
  of \ppwbblnbb at \s 8 \TeV, described
  in Section~\ref{sec:wbbproduction}.
-Throughout this section, $\ell$ or lepton denotes
- an electron or a muon.
+%Throughout this section, $\ell$ or lepton denotes
+% an electron or a muon.
 
 \section{Event Selection}
 
@@ -70,16 +70,15 @@ The second column is for the \wmn decay channel,
 {}         & \multicolumn{2}{c}{Events passing selection} \\
 Selection  & \wmn & \wen \\
 \hline\hline
- $\pt^{\ell_1} > 30$ \GeV and $\abs{\eta^{\ell_1}}<2.1$           & X  & X \\
- $\pt^{\ell_2} \ngtr 10$ \GeV or $\abs{\eta^{\ell_2}}\nless 2.1$  & X  & X \\
- {$\pt^{j_1,j_2} > 25$} GeV and {$|\eta^{j_1,j_2}| < 2.4$}        & X & X \\
- {$\pt^{j_3} \ngtr 25$} GeV or {$|\eta^{j_3}| \nless 4.7$}        & X & X \\
- $b$-tag $j_1,j_2$                                                & X & X
+ $\pt^{\ell_1} > 30$ \GeV and $\abs{\eta^{\ell_1}}<2.1$          & 67249140 & 58079638 \\
+ $\pt^{\ell_2} \ngtr 10$ \GeV or $\abs{\eta^{\ell_2}}\nless 2.1$ & 58297430 & 52911675 \\
+ {$\pt^{j_1,j_2} > 25$} GeV and {$|\eta^{j_1,j_2}| < 2.4$}       & 5251248  & 5880076  \\
+ {$\pt^{j_3} \ngtr 25$} GeV or {$|\eta^{j_3}| \nless 4.7$}       & 3212465  & 3618448  \\
+ $b$-tag $j_1,j_2$                                               & 7432     & 7357    
 \end{tabular}
 \end{center}
 \label{tab:wbbcutflow}
 \end{table}
-
 
 \section{Simulated samples}
 
@@ -99,10 +98,10 @@ Simulated samples of \vjets, \gjets
  \textsc{\MADGRAPH~5.1} \cite {Alwall:2011uj,ref:MadEvent} % \cite{ref:MadEvent,Alwall:2007st,Alwall:2011uj}
  using the CTEQ6L \cite {ref:CTEQ66} Parton Distribution Function (PDF) set.
 These samples are interfaced with
- \textsc{\PYTHIA~6.4} \cite {Sjostrand:2006za} using the Z2* tune
- for hadronization.
-The most recent \textsc{\PYTHIA} Z2* tune is derived from the Z1 tune \cite {Field:2010bc},
- which uses the CTEQ5L parton distribution set, whereas Z2* adopts CTEQ6L \cite {ref:CTEQ66}.
+ \textsc{\PYTHIA~6.4} \cite {Sjostrand:2006za} for
+ hadronization using the Z2* tune for the underlying event.
+%The most recent \textsc{\PYTHIA} Z2* tune is derived from the Z1 tune \cite {Field:2010bc},
+% which uses the CTEQ5L parton distribution set, whereas Z2* adopts CTEQ6L \cite {ref:CTEQ66}.
 The $k_t$-MLM \cite {Alwall:2007fs,Alwall:2008qv} matching scheme is used.
 For the signal distributions, the \wbb component of
  an inclusive \wjets sample is used,
@@ -137,21 +136,22 @@ The energy of the selected leptons at the generator level is corrected
 Generated leptons which do not originate in simulation
  from the primary interaction vertex are not considered for selection.
 
-Single top quark event samples are generated at next-to-leading order (NLO) with
- \textsc{\POWHEG~2.0} \cite {Nason:2004rx,Frixione:2007vw,ref:POWHEG_T_SandTchannel,ref:POWHEG_T_tWchannel}
+Single top quark event samples are generated at NLO with
+ \textsc{\POWHEG~2.0}
+  \cite {Nason:2004rx,Frixione:2007vw,ref:POWHEG_T_SandTchannel,ref:POWHEG_T_tWchannel}
  %\POWHEG 2.0 \cite{Nason:2004rx,Frixione:2007vw,Alioli:2008gx,ref:POWHEG_T_SandTchannel,ref:POWHEG_T_tWchannel}
  using the CTEQ6M PDF set.
 Hadronization is performed using
  \textsc{\PYTHIA~6.4} with the Z2* tune.
 Diboson samples are generated and hadronized
- with \textsc{\PYTHIA~6.4} at leading order (LO)
+ with \textsc{\PYTHIA~6.4} at LO
  using the CTEQ6L PDF set and the Z2* tune.
 
 The cross sections for the \vjets and \gjets processes
  are normalized using the predictions
  for inclusive W, Z and photon production from
  \textsc{fewz~3.1} \cite {Gavin:2012sy,ref:FEWZ3.1}
- evaluated at next-to-next-to-leading order (NNLO).
+ evaluated at NNLO.
 Single top quark and diboson production cross sections are
  normalized to the NLO
  cross section predictions from $\MCFM~7.0$ \cite {Campbell:2010ff, Badger:2010mg}
@@ -161,8 +161,8 @@ The $\ttbar$ cross section used is $241.5\pm8.5$ pb and
  experiments \cite{CMS:2014gta,Aad:2014kva,Chatrchyan:2013faa}
  at the LHC at $\sqrt{s}=8\TeV$.
 
-
-Events induced by additional simultaneous pp interactions
+Events induced by additional simultaneous $pp$ interactions
+ (pileup) as described in Section~\ref{sec:vertexreco}
  are simulated using events generated with \textsc{\PYTHIA~6}.
 During the 2012 data taking, the average pileup rate was
  21 interactions per bunch crossing and
@@ -177,7 +177,7 @@ During the 2012 data taking, the average pileup rate was
 The QCD multijet sample is derived using a data-driven method. 
 The shapes of the distributions for QCD multijet events are taken as the difference between
  the data sample and the sum of the other simulated backgrounds in a region of phase
- space enriched in multijets as illustrad in Figure \ref{fig:qcdshape}.
+ space enriched in multijets as illustrated in Figure \ref{fig:qcdshape}.
 This region is found using the same selection requirements as those in the signal region,
  but requiring the muon (electron) to be antiisolated: $I > 0.20 \; (0.15)$.
 In the fiducial regions used in this analysis,
@@ -198,11 +198,11 @@ To obtain an initial estimate of the number of QCD multijet
  shape derived in the antiisolated region, is
  put in the signal region and scaled by $ (d_{20}-m_{20})/q_{20} $ where
  $d_{20}$ is the yield in data in the range $0<\mt<20$, $m_{20}$ is the combined
- yield from the simluated samples in this range, and $q_{20}$ is the corresponding
+ yield from the simulated samples in this range, and $q_{20}$ is the corresponding
  unnormalized yield of QCD multijet events.
 This has the effect of normalizing the QCD sample such that the combination of the QCD 
  and the simulated backgrounds has the same total yield as data in the range $0<\mt<20$.
-If $d_{20}<m_{20}$, the QCD contribution is taken to be negligable. % and is scaled by $10^{-6}$.
+If $d_{20}<m_{20}$, the QCD contribution is taken to be negligible. % and is scaled by $10^{-6}$.
 % this happens for ttbar multi-lepton
 The relative uncertainty in the yield of QCD multijet events is
  estimated to be $\pm$50\%, taking into account both the fit result
@@ -217,7 +217,7 @@ This relative uncertainty also covers shape mismodelings
   isolation and subtracting MC from the data.
   Shown above is the data, MC background and 
    extrapolated QCD shape (difference between data
-   and MC backbrounds) for both the muon and electron channels
+   and MC backgrounds) for both the muon and electron channels
    in the $W+jj$ and $W+b\bar{b}$ phase spaces.
   The requirement of two well-identified $b$ tags
    essentially eliminates all MC backgrounds in
@@ -225,10 +225,10 @@ This relative uncertainty also covers shape mismodelings
    the same as that of the data.
   }
  \center
-\label{fig:qcd_mu}\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/qcd/QCDShape_wjj_mt_mu.png}
-\label{fig:qcd_mu}\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/qcd/QCDShape_wjj_mt_ele.png}
-\label{fig:qcd_mu}\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/qcd/QCDShape_wbb_mt_mu_05.png}
-\label{fig:qcd_mu}\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/qcd/QCDShape_wbb_mt_ele_05.png}
+\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/qcd/QCDShape_wjj_mt_mu.png}
+\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/qcd/QCDShape_wjj_mt_ele.png}
+\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/qcd/QCDShape_wbb_mt_mu_05.png}
+\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/qcd/QCDShape_wbb_mt_ele_05.png}
  \label{fig:qcdshape}
 \end{figure}
 
@@ -237,37 +237,32 @@ This relative uncertainty also covers shape mismodelings
 {$\boldsymbol{W}$+jets: light and charm component}
 
 $W$+light jets is the dominant background in the $\wjj$ phase space,
- which is found using idential selections as are used in 
+ which is found using identical selections as are used in 
  the signal region with the exception of the $b$ tag requirement.
 In the $W+jj$ phase space, no requirements on $b$ tags are made.
 This control region therefore serves as a cross check on the 
  reconstructed objects observed in the signal region before
  the added complication of $b$-tagging has been introduced. 
-In Figure~\ref{fig:wjj_plots} is shown the \pt 
- of the identified lepton along with the \met and \mt
+In Figure~\ref{fig:wjj_plots} is shown the \mt between
+ the identified lepton and \met
  in both decay channels.
-Agreement between simulation and data is on the order of 10\%.
+Agreement between simulation and data is on the order of $10\%-20\%$.
+
 
 \begin{figure}
  \caption[\wjj control region for the \wbb measurement]{
   Selecting for a tight ID muon with $\pt>$30 GeV and exactly two central jets passing loose ID,
-   we recover the distributions shown above. 
-  Shown in the upper left (right)
-   is the momentum of the leading lepton in the muon (electron) channel.
-  The missing transverse energy is shown in the center,
-  and transverse mass is given in the bottom two distributions.
-  The shaded band in ratio plots shows statistical uncertainty. 
+   we recover the \mt distributions in the muon channel (left)
+   and the electron channel (right). 
+  The shaded band indicates the statistical uncertainty. 
  } 
-\begin{centering}
-\begin{tabular}{cc}
- \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/wjj/Histograms_wjj_goodLep_pt_mu.png} &
- \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/wjj/Histograms_wjj_goodLep_pt_ele.png} \\
- \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/wjj/Histograms_wjj_met_mu.png} & 
- \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/wjj/Histograms_wjj_met_ele.png} \\
- \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/wjj/Histograms_wjj_mt_mu.png}  & 
+\center
+ %\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/wjj/Histograms_wjj_goodLep_pt_mu.png} 
+ %\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/wjj/Histograms_wjj_goodLep_pt_ele.png} 
+ %\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/wjj/Histograms_wjj_met_mu.png} 
+ %\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/wjj/Histograms_wjj_met_ele.png} 
+ \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/wjj/Histograms_wjj_mt_mu.png} 
  \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/wjj/Histograms_wjj_mt_ele.png} 
-\end{tabular}
-\end{centering}
     \label{fig:wjj_plots}
 \end{figure}
 
@@ -287,7 +282,7 @@ Therefore, the dominant contribution to
  mistag of a $c$ jet for a $b$ jet, along with 
  the misidentification of an ISR/FSR light jet.
 However, the contribution to events in the signal region
- from high energy \gcc is not negligable and
+ from high energy \gcc is not negligible and
  moreover these events have kinematics closely related 
  to that of the signal. 
 
@@ -302,12 +297,12 @@ Below is the diagram for the process attempting
  control region.
 }
 \center
- \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/feyn/st_tchannel.pdf}
+ \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/feyn/stt/stt.pdf}
 \label{fig:feynstt}
 \end{figure}
 
 The single top $t$-channel control region is defined by the signal selection requirements
- without the third and forward jet vetos, and
+ without the third and forward jet vetoes, and
  with the leading jet required to be central
  ($|\eta|<2.4$) and tightly $b$-tagged,
  while the subleading jet has no $b$ requirement and must fall within
@@ -325,36 +320,34 @@ The fact that it is recoiling against the much more massive $t$
  means that it is likely be forward by conservation of momentum.
 As can be seen in Figure \ref{fig:prefit_stt}, there are many 
  backgrounds contaminating the purity of this phase space,
- but agreement between data and simulation is on the order of 5-10\%.
+ but agreement between data and simulation is on the order of 5-10\%
+ up to 100 \GeV.
 
 \begin{figure}
       \caption[Single-top control region for the \wbb measurement]{The single top control region is defined by one $b$-tagged central jet and one forward jet.
-      Shown above are distributions in the single top control region.
-       Left plots are in the muon decay channel and right
-        plots are in the electron decay channel.
+      Shown below are the \mt distributions in the single top control region
+       in the muon channel (left) and electron channel (right).
+      The shaded band indicates the statistical uncertainty.
       }
-\begin{centering}
-\begin{tabular}{cc}
- \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/stt/Histograms_stt_goodLep_pt_mu.png} &
- \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/stt/Histograms_stt_goodLep_pt_ele.png} \\
- \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/stt/Histograms_stt_met_mu.png} & 
- \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/stt/Histograms_stt_met_ele.png} \\
- \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/stt/Histograms_stt_mt_mu.png} & 
+\center
+ %\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/stt/Histograms_stt_goodLep_pt_mu.png} 
+ %\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/stt/Histograms_stt_goodLep_pt_ele.png} 
+ %\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/stt/Histograms_stt_met_mu.png} 
+ %\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/stt/Histograms_stt_met_ele.png} 
+ \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/stt/Histograms_stt_mt_mu.png} 
  \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/stt/Histograms_stt_mt_ele.png}
-\end{tabular}
-\end{centering}
       \label{fig:prefit_stt}
 \end{figure}
 
 
 \subsection[\zll backgrounds]{$\boldsymbol{\zll}$ backgrounds}
 
-The Drell-Yan backround is validated in a control region where the $\wbb$
+The Drell-Yan background is validated in a control region where the $\wbb$
  selection requirements are applied, but the lepton veto 
  is inverted, requiring two isolated, same-flavor leptons
  which are presumed to be the decay products of the $Z$ boson.
 This is referred to as the $\zbb$ region and distributions
- of the mass and transverse momentum of the dilepton pair is
+ of the mass of the dilepton pair is
  shown in Figure \ref{fig:prefit_dybb}.
 Contamination from \ttbar is evident. 
 A cleaner Drell-Yan phase space is found by requiring exactly two jets
@@ -364,34 +357,34 @@ Figure \ref{fig:prefit_dyjj} shows the same distributions as
 %More cross checks on Drell-Yan are shown in Appendix \ref{sec:dycrosscheck}.
 
 \begin{figure}
-      \caption[\zbb control region for the \wbb analysis]{ Above are distributions of the mass and
-        transverse momentum of the dilepton pair in the
+      \caption[\zbb control region for the \wbb analysis]{ 
+       Below are distributions of the invariant mass
+        of the dilepton pair in the
         $\zbb$ phase space.
-       Left plots are in the muon decay channel and right
-        plots are in the electron decay channel.
+       The left plot shows the dimuon decay channel
+        and the right plot shows the dielectron deacy channel.
       }
       \center
 \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/dy/Histograms_e2CJ_xFJ_tB2_goodL1L2_mass_mu.png}
 \includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/dy/Histograms_e2CJ_xFJ_tB2_goodL1L2_mass_ele.png}
-\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/dy/Histograms_e2CJ_xFJ_tB2_goodL1L2_pt_mu.png}
-\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/dy/Histograms_e2CJ_xFJ_tB2_goodL1L2_pt_ele.png}
+%\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/dy/Histograms_e2CJ_xFJ_tB2_goodL1L2_pt_mu.png}
+%\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/dy/Histograms_e2CJ_xFJ_tB2_goodL1L2_pt_ele.png}
       \label{fig:prefit_dybb}
 \end{figure}
 
 \begin{figure}
-      \caption[\zjj control region for the \wbb measurement]{ Above are distributions of the mass and
-        transverse momentum of the dilepton pair in the
+      \caption[\zjj control region for the \wbb measurement]{
+       Below are distributions of the invariant mass
+        of the dilepton pair in the
         $\zjj$ phase space.
-       Left plots are in the muon decay channel and right
-        plots are in the electron decay channel.
+       The left plot shows the dimuon decay channel
+        and the right plot shows the dielectron deacy channel.
       }
       \center
- \subfloat[]{\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/dy/Histograms_e2CJ_xFJ_goodL1L2_mass_mu.png}}
- \subfloat[]{\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/dy/Histograms_e2CJ_xFJ_goodL1L2_mass_ele.png}}
-  \\
- \subfloat[]{\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/dy/Histograms_e2CJ_xFJ_goodL1L2_pt_mu.png}}
- \subfloat[]{\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/dy/Histograms_e2CJ_xFJ_goodL1L2_pt_ele.png}}
-  \\
+\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/dy/Histograms_e2CJ_xFJ_goodL1L2_mass_mu.png}
+\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/dy/Histograms_e2CJ_xFJ_goodL1L2_mass_ele.png}
+%\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/dy/Histograms_e2CJ_xFJ_goodL1L2_pt_mu.png}
+%\includegraphics[width=0.4\textwidth]{/Users/rhombus/CMS/Thesis/thesis/pdfs/wbbxc/dy/Histograms_e2CJ_xFJ_goodL1L2_pt_ele.png}
       \label{fig:prefit_dyjj}
 \end{figure}
 
@@ -443,7 +436,7 @@ The $\ttbar$-multilepton control region uses
 This selection is to capture \ttbar events where
  both $W$ bosons decay leptonically, 
  while avoiding same-flavor dileptons which 
- are charactaristic of $Z$ boson decay.
+ are characteristic of $Z$ boson decay.
 In the $\ttbar$-multilepton region,
  the $\mt$ variable is calculated with respect to
  the electron in the electron channel
@@ -456,117 +449,7 @@ The uncorrelated normalization uncertainties
  are uncertainties on the cross section of
  the given sample.
 
-Two major parameters in the simulations
- significantly affect the
- normalization of the simulated distributions:
- the $b$-tagging efficiency and the jet energy scale (JES).
-Both control and the signal regions show similar
- sensitivity to the $b$-tagging efficiency,
- and its adjustment affects all the regions
- in a correlated manner.
-Because the $\ttbar$ production has more than two jets in the final state,
- the rejection of events with a third jet makes it sensitive to JES.
-The effect on the leading jets is moderate but
- JES variations lead to significant migration of jets
- into and out of the veto region.
-The $\ttbar$-multijet control region,
- since it has no veto on a third jet,
- is less sensitive to JES variations
- than the $\ttbar$-multilepton control region.
-The same is true for the \wbb process,
- which at LO has only two jets
- in the final state from the ISR gluon splitting
- and therefore is not affected by the
- jet veto requirement.
-
-The fit procedure consists of three consecutive steps
- where the simulated distributions in two control regions
- and the signal region
- are fit to data using the $\mt$ variable,
- which is chosen because it has
- a well known shape for  \wjets production
- that allows for reliable signal extraction.
-First, the fit is performed in the $\ttbar$-multijet region.
-In this control region, the uncertainty is dominated
- by the uncertainty in the $b$-tagging efficiency
- so the fit results in a correction of the
- $b$-tagging efficiency that
- is measured separately in the muon and electron
- channels and then combined. % before being applied.
-The simulation is corrected by $14\%$ using this result
- and the corrected simulated samples are
- fit to the data in the $\ttbar$-multilepton region.
-The result of the second step is used to adjust JES
- by $3.4\%$
- and as a result of this procedure, the simulation is
- expected to better describe the $\ttbar$ contribution.
-The final step is to extract the number of
- \wbb events from the fit to \mt in the signal region.
-
-
-\section{Systematic uncertainties}
-\label{sec:systematic_and_statistical_uncertainties}
-
-The main sources of the systematic uncertainties are listed in Table \ref{tab:input_unc_wbb}.
-The size of the variation is shown for each uncertainty source,
- together with its effect on the measured cross section
- and is included as a nuisance parameter in the fit.
-Some of the uncertainties affect
- only the normalization in the respective contributions.
-These include the uncertainties on the
- theoretical cross section of a given sample,
- which are uncorrelated between samples
- and are included as log-normal constraints on the rate.
-For any sample, the effect on the final normalization
- from uncertainties which only effect normalization is 
-\begin{equation}\label{eq:fitnorm}
-N_f = N_i \prod a_{j}^{x_j}
-\end{equation}
- where $a$ is the
- input bound given in the ``Variation'' column
- of Table \ref{tab:input_unc_wbb} and $x$ is the
- parameter being fit for the $j$ nuisances.
-The uncertainty due to the b-tagging efficiency
- and the uncertainty due to the JES are allowed in
- principle to have shape dependencies in this analysis,
- but only affect the normalizations of the samples
- in the \mt variable in practice.
-
-The uncertainties which affect both the normalization and the
- shape of the $\mt$ distributions
- are those listed in
- the table under ``Shape'' and are
- incorporated into the fit via binned templates.
-These templates 
- are obtained by varying the source
- of the given uncertainty and reprocessing the simulated sample.
-Taking $h_0$ as the unshifted template
- and $h_j^\pm$ as the up and down templates obtained through reprocessing
- after shifting nuisance $j$, the final fitted shape $h$ is given by
-\begin{align}\label{eq:fitshape}
- h = h_0 + \sum_j[A(x)h^-_j + B(x)h_0 + C(x)h^+_j]\\
- A(x) = x(x+1)/2\;\;\;,
- B(x) = -x^2\;\;\;,
- C(x) = x(x-1)/2
-\end{align}
-
-
-The 50\% uncertainty in the QCD background is taken as a conservative estimate
- and ultimately has a 2-3\% contribution to the uncertainty on the measured cross section.
-The b-tagging efficiency and JES rescaling uncertainties
- are taken from their respective fits.
-The renormalization and factorization
- scale uncertainties are estimated by simultaneously
- changing the renormalization and factorization scales,
- $\mu_{\mathrm{R}}$ and $\mu_{\mathrm{F}}$,
- up and down by a factor of two.
-The PDF uncertainties are estimated from the change in
- acceptance found by varying the
- PDF set following the LHAPDF/PDF4LHC prescription
- \cite{Buckley:2014ana,Botje:2011sn,Alekhin:2011sk,Ball:2012cx}
- considering PDF sets from CTEQ, MSTW, NNPDF, and HERA Collaborations.
-
-\begin{table}[htb]
+\begin{table}[!h]
 \begin{center}
 \caption[Systematic uncertainties in $\wbb$]{
 Breakdown of the main sources of systematic
@@ -631,6 +514,125 @@ The uncertainties in the integrated luminosity \cite {ref:CMSLumiCalc} and
 \end{table}
 
 
+
+Two major parameters in the simulations
+ significantly affect the
+ normalization of the simulated distributions:
+ the $b$-tagging efficiency and the jet energy scale (JES).
+Both control and the signal regions show similar
+ sensitivity to the $b$-tagging efficiency,
+ and its adjustment affects all the regions
+ in a correlated manner.
+Because the $\ttbar$ production has more than two jets in the final state,
+ the rejection of events with a third jet makes it sensitive to JES.
+The effect on the leading jets is moderate but
+ JES variations lead to significant migration of jets
+ into and out of the veto region.
+The $\ttbar$-multijet control region,
+ since it has no veto on a third jet,
+ is less sensitive to JES variations
+ than the $\ttbar$-multilepton control region.
+The same is true for the \wbb process,
+ which at LO has only two jets
+ in the final state from the ISR gluon splitting
+ as illustrated in Figure~\ref{fig:ppwbblnbbfeyn}
+ and therefore is not affected by the
+ jet veto requirement.
+
+The fit procedure consists of three consecutive steps
+ where the simulated distributions in two control regions
+ and the signal region
+ are fit to data using the $\mt$ variable,
+ which is chosen because it has
+ a well known shape for  \wjets production
+ that allows for reliable signal extraction.
+First, the fit is performed in the $\ttbar$-multijet region.
+In this control region, the uncertainty is dominated
+ by the uncertainty in the $b$-tagging efficiency
+ so the fit results in a correction of the
+ $b$-tagging efficiency that
+ is measured separately in the muon and electron
+ channels and then combined. % before being applied.
+The simulation is corrected by $14\%$ using this result
+ and the corrected simulated samples are
+ fit to the data in the $\ttbar$-multilepton region.
+The result of the second step is used to adjust JES
+ by $3.4\%$
+ and as a result of this procedure, the simulation is
+ expected to better describe the $\ttbar$ contribution.
+The final step is to extract the number of
+ \wbb events from the fit to \mt in the signal region.
+
+\FloatBarrier
+
+
+\section{Systematic uncertainties}
+\label{sec:systematic_and_statistical_uncertainties}
+
+The main sources of the systematic uncertainties are listed in Table \ref{tab:input_unc_wbb}.
+The size of the variation is shown for each uncertainty source,
+ together with its effect on the measured cross section
+ and is included as a nuisance parameter in the fit.
+Some of the uncertainties affect
+ only the normalization in the respective contributions.
+These include the uncertainties on the
+ theoretical cross section of a given sample,
+ which are uncorrelated between samples
+ and are included as log-normal constraints on the rate.
+For any sample, the effect on the final normalization
+ from uncertainties which only effect normalization is 
+\begin{equation}\label{eq:fitnorm}
+N_f = N_i \prod a_{j}^{x_j}
+\end{equation}
+ where $a$ is the
+ input bound given in the ``Variation'' column
+ of Table \ref{tab:input_unc_wbb} and $x$ is the
+ parameter being fit for the $j$ nuisances.
+The uncertainty due to the b-tagging efficiency
+ and the uncertainty due to the JES are allowed in
+ principle to have shape dependencies in this analysis,
+ but only affect the normalizations of the samples
+ in the \mt variable in practice.
+
+The uncertainties which affect both the normalization and the
+ shape of the $\mt$ distributions
+ are those listed in
+ the table under ``Shape'' and are
+ incorporated into the fit via binned templates.
+These templates 
+ are obtained by varying the source
+ of the given uncertainty and reprocessing the simulated sample.
+Taking $h_0$ as the unshifted template
+ and $h_j^\pm$ as the up and down templates obtained through reprocessing
+ after shifting nuisance $j$, the final fit shape $h$ is given by
+\begin{align}\label{eq:fitshape}
+ h = h_0 + \sum_j[A(x)h^-_j + B(x)h_0 + C(x)h^+_j]\\
+ A(x) = x(x+1)/2\;\;\;,
+ B(x) = -x^2\;\;\;,
+ C(x) = x(x-1)/2
+\end{align}
+
+
+The 50\% uncertainty in the QCD background is taken as a conservative estimate
+ and ultimately has a 2-3\% contribution to the uncertainty on the measured cross section.
+The b-tagging efficiency and JES rescaling uncertainties
+ are taken from their respective fits.
+The renormalization and factorization
+ scale uncertainties are estimated by simultaneously
+ changing the renormalization and factorization scales,
+ $\mu_{\mathrm{R}}$ and $\mu_{\mathrm{F}}$,
+ up and down by a factor of two to account
+ for the scale choice of the couplings
+ and the energy scale at which jets are modeled
+ as coming from the ME or from the shower.
+The PDF uncertainties are estimated from the change in
+ acceptance found by varying the
+ PDF set following the LHAPDF/PDF4LHC prescription
+ \cite{Buckley:2014ana,Botje:2011sn,Alekhin:2011sk,Ball:2012cx}
+ considering PDF sets from CTEQ, MSTW, NNPDF, and HERA Collaborations.
+
+\FloatBarrier
+
 \section{Signal Extraction}
 \label{sec:results}
 
@@ -639,7 +641,7 @@ The fit in the $\ttbar$-multijet region
  the muon and electron channels
  in order to better describe the
  b-tagging efficiency in the simulation
- as described in Section \ref{sec:analysis_strategy}.
+ as described in Section \ref{sec:wbb_analysisstrategy}.
 The results of the fit are presented the
  two plots at the top of Fig.~\ref{fig:fittingplots}.
 The central values of the b-tag rescaling factors, {$1.12 \pm 0.08$} (muon channel) and
@@ -650,7 +652,7 @@ The simulation is reweighted accordingly for the next fit and
  rescale factor in subsequent fits.
 
 A fit to the $\ttbar$-multilepton region adjusts
- the JES, as described in Section \ref{sec:analysis_strategy}.
+ the JES, as described in Section \ref{sec:wbb_analysisstrategy}.
 As a result, the simulated $\mt$ distributions
  change normalization.
 The best fit suggests changing the
@@ -668,26 +670,7 @@ Thus the simulation is tuned to describe the $\ttbar$
  control regions and is
  used to extract the signal yield in the signal region.
 
-The results of the fit in the \wbb signal region
- are shown in the bottom of Fig.~\ref{fig:fittingplots}.
-All background contributions are allowed to vary
- in the fit within their uncertainties,
- while the \wbb normalization remains a free parameter of the fit.
-The correlations across all simulated samples are taken into account
- as shown in Table~\ref{tab:input_unc_wbb}.
-The composition of the event sample in
- the signal region is summarized in Table~\ref{tab:wbb_yields}.
-Events coming from the production of a Higgs boson in association
- with a vector boson constitute a negligible fraction of the
- overall event yield and are not considered.
-
-Distributions for variables other than those being directly fit are
- also produced by applying the results from the three fits to
- the simulated samples.
-Distributions of $\Delta R(\mathrm{\bbbar})$ and $\pt^\ell$
- combining both lepton flavors are presented in Fig.~\ref{fig:postfit_drbb_ptl}.
-
-\begin{table}[!h]
+\begin{table}[htb]
 \begin{center}
 \caption[Measured breakdown of samples in \wbb]{
  Initial and final yields obtained in the \wbb signal region.
@@ -720,6 +703,25 @@ Combined & \multicolumn{4}{c}{$1.26 \pm 0.17$}  \\
 \end{center}
 \end{table}
 
+
+The results of the fit in the \wbb signal region
+ are shown in the bottom of Fig.~\ref{fig:fittingplots}.
+All background contributions are allowed to vary
+ in the fit within their uncertainties,
+ while the \wbb normalization remains a free parameter of the fit.
+The correlations across all simulated samples are taken into account
+ as shown in Table~\ref{tab:input_unc_wbb}.
+The composition of the event sample in
+ the signal region is summarized in Table~\ref{tab:wbb_yields}.
+Events coming from the production of a Higgs boson in association
+ with a vector boson constitute a negligible fraction of the
+ overall event yield and are not considered.
+Distributions for variables other than those being directly fit are
+ also produced by applying the results from the three fits to
+ the simulated samples.
+Distributions of $\Delta R(\mathrm{\bbbar})$ and $\pt^\ell$
+ combining both lepton flavors are presented in Fig.~\ref{fig:postfit_drbb_ptl}.
+
 \begin{figure}[htb]
 \caption[Three-step fitting procedure for \wbb measurement]{
  The transverse mass distributions (upper) in the \ttbar-multijet
@@ -733,25 +735,19 @@ Combined & \multicolumn{4}{c}{$1.26 \pm 0.17$}  \\
  The last bin contains overflow events.
  The shaded area represents the total uncertainty in the simulation after the fit.
  }
-\begin{centering}
-\begin{tabular}{cc}
-\includegraphics[width=0.45\textwidth]{pdfs/wbbxc/pape/poststep1_ttjjj_mt_mu} & 
-\includegraphics[width=0.45\textwidth]{pdfs/wbbxc/pape/poststep1_ttjjj_mt_ele} \\
-\includegraphics[width=0.45\textwidth]{pdfs/wbbxc/pape/poststep2_ttme_mt_mu} & 
-\includegraphics[width=0.45\textwidth]{pdfs/wbbxc/pape/poststep2_ttme_mt_ele} \\
-\includegraphics[width=0.45\textwidth]{pdfs/wbbxc/pape/postcfit_wbb_mt_mu} &
+\center
+\includegraphics[width=0.45\textwidth]{pdfs/wbbxc/pape/poststep1_ttjjj_mt_mu} 
+\includegraphics[width=0.45\textwidth]{pdfs/wbbxc/pape/poststep1_ttjjj_mt_ele}
+\includegraphics[width=0.45\textwidth]{pdfs/wbbxc/pape/poststep2_ttme_mt_mu}  
+\includegraphics[width=0.45\textwidth]{pdfs/wbbxc/pape/poststep2_ttme_mt_ele} 
+\includegraphics[width=0.45\textwidth]{pdfs/wbbxc/pape/postcfit_wbb_mt_mu} 
 \includegraphics[width=0.45\textwidth]{pdfs/wbbxc/pape/postcfit_wbb_mt_ele}
-\end{tabular}
-\end{centering}
 \label{fig:fittingplots}
 \end{figure}
 
 
 % dR(jj) and pT(l) postfit 
-\begin{figure}[!htb]
-\center
-\includegraphics[width=0.49\textwidth]{pdfs/wbbxc/pape/postcfit_wbb_dRJ1J2}
-\includegraphics[width=0.49\textwidth]{pdfs/wbbxc/pape/postcfit_wbb_pTLep}
+\begin{figure}[htb]
 \caption[More variables in the \wbb signal region]{
   Distributions of $\Delta R(b\bar{b})$ and $\pt^\ell$ after
    applying the results from the fits to the simulation.
@@ -760,9 +756,13 @@ Combined & \multicolumn{4}{c}{$1.26 \pm 0.17$}  \\
   The last bin contains overflow events and
    the shaded area represents the total uncertainty in the simulation after the fit.
  }
+\center
+\includegraphics[width=0.49\textwidth]{pdfs/wbbxc/pape/postcfit_wbb_dRJ1J2}
+\includegraphics[width=0.49\textwidth]{pdfs/wbbxc/pape/postcfit_wbb_pTLep}
 \label{fig:postfit_drbb_ptl}
 \end{figure}
 
+\FloatBarrier
 
 \section{Cross Section and Comparisons}
 
@@ -787,8 +787,8 @@ $$\sigma(\ppwbblnbb) =
 In this analysis, the fiducial cross section was calculated in the following manner:
  \MADGRAPH is used to compute the $\wbb$ cross section with fiducial cuts applied.
 Then a k-factor for inclusive W production is applied, obtained from the ratio
-of the inclusive W cross sections calculated with \FEWZ (at NNLO using the five-flavour
-\CTEQ6M PDF set) and with Madgraph.
+of the inclusive W cross sections calculated with \FEWZ at NNLO using the 5F 
+\CTEQ6M PDF set with the cross section calculated using  \MADGRAPH.
 %In this analysis, the cross section used was calculated with \textsc{fewz} at NNLO
 % using the five-flavor \CTEQ6M PDF set on the inclusive $\wjets$ sample.
 The product $A\cdot\epsilon$ is 13~(11)\% in the
@@ -824,6 +824,7 @@ The combination of the muon and electron measurements is done using a simultaneo
  \begin{tabular}{l|c}
  Channel        & $\sigma(\ppwbblnbb)$ pb \\
 \hline
+\hline
  Combined & $  0.64 \pm 0.03 \mathrm{(stat)} \pm 0.10 \mathrm{(syst)} \pm 0.06 \mathrm{(theo)} \pm 0.02 \mathrm{(lumi)} $ \\
 \hline 
      Muon & $  0.62 \pm 0.04 \mathrm{(stat)} \pm 0.11 \mathrm{(syst)} \pm 0.06 \mathrm{(theo)} \pm 0.02 \mathrm{(lumi)} $ \\
@@ -840,11 +841,11 @@ The measured cross sections are compared to theoretical predictions from
  with the {\MSTW2008} PDF set, as well as from
  %with the {\MSTW2008} NNLO PDF set, as well as from
  \MADGRAPH5
- interfaced with \PYTHIAs in the four- and five-flavour schemes and
- \MADGRAPH5 with \PYTHIAe \cite{ref:Pythia8} in the four-flavour scheme.
-In the five-flavour scheme, the PDF set {\CTEQ6L} was
+ interfaced with \PYTHIAs in the four- and five-flavor schemes and
+ \MADGRAPH5 with \PYTHIAe \cite{ref:Pythia8} in the four-flavor scheme.
+In the five-flavor scheme, the PDF set {\CTEQ6L} was
  used and \PYTHIAs was run using {TuneZ2*}.
-The two four-flavour samples were produced using
+The two four-flavor samples were produced using
  a NNLO PDF set interfaced with %NNLO23\_lo\_as\_0130\_qed
  \PYTHIA (version 6 in one sample, version 8 in the other)
  in the {CUETP8M1} tune.
@@ -877,7 +878,7 @@ This factor is determined by
  of the hadronization process, and using
  jets identified at the particle list level.
 The correction factor is obtained for
- jets computed excluding neutrinos from the particle list, aparticles
+ jets computed excluding neutrinos from the particle list, as particles
  such jets are closer in kinematics
  to particle jets at the detector level.
 The uncertainty reflects both the statistics of the
@@ -885,7 +886,7 @@ The uncertainty reflects both the statistics of the
  \MADGRAPH + \PYTHIAe sample.
 
 % DPS
-The \MCFM and four-flavour \MADGRAPH predictions do not account for
+The \MCFM and four-flavor \MADGRAPH predictions do not account for
  \wbb production where the \bbbar system comes from multiple parton scattering.
 CMS simulations of \MADGRAPH + \PYTHIA events that include
  double parton interactions (DPIs) reproduce the $\wjets$ data \cite{Chatrchyan:2013xxa},
@@ -925,7 +926,7 @@ The results also agree within one standard deviation with previously published $
   in the given sample associated with PDF choice
   and the yellow band represents the uncertainty
   associated with DPI.
- The labels 4F and 5F refer to the four- and five-flavour
+ The labels 4F and 5F refer to the four- and five-flavor
   PDF schemes, and 
   in the case of the \MADGRAPH + \textsc{\PYTHIA6} (5F) sample,
   the effects of DPI are already included in the generated
